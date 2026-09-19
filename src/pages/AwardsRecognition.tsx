@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Globe, Medal, ExternalLink, Download, Eye, X, Award } from "lucide-react";
 import { useScrollToHash } from "@/hooks/use-scroll-to-hash";
+import { useAutoReveal } from "@/components/Reveal";
 
 export default function AwardsRecognition() {
+  useAutoReveal();
   useScrollToHash();
   const [activeCert, setActiveCert] = useState<string | null>(null);
 
@@ -156,27 +158,27 @@ export default function AwardsRecognition() {
   const selectedCertObj = certificatesList.find((c) => c.id === activeCert);
 
   return (
-    <div className="bg-slate-50 min-h-screen py-10 sm:py-14 text-slate-800">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-12">
+    <div className="relative isolate min-h-screen py-12 text-label sm:py-16">
+      <div data-reveal-root className="mx-auto max-w-6xl px-5 sm:px-8 space-y-12">
         {/* Header */}
         <div className="space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 border border-amber-200 text-amber-900 text-xs font-semibold uppercase tracking-wider">
-            <Award className="w-3.5 h-3.5 text-amber-600" /> Honors, Medals & Verified Credentials
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-label/[0.05] border border-separator text-label text-[0.76rem] font-medium min-h-[44px]">
+            <Award className="w-3.5 h-3.5 text-label-secondary" /> Honors, Medals & Verified Credentials
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+          <h1 className="text-3xl sm:text-4xl font-semibold text-label">
             Awards & Recognition
           </h1>
-          <p className="text-slate-600 text-sm sm:text-base max-w-3xl leading-relaxed">
+          <p className="text-label-secondary text-sm sm:text-base max-w-3xl leading-relaxed">
             International conference invitations, athletic runner-up medals, CREST Gold Award, publication honors, and verified certificates.
           </p>
-          <div className="w-24 h-1.5 bg-blue-900 rounded" />
+          <div className="w-24 h-1.5 bg-accent rounded" />
         </div>
 
         {/* First Section: International Recognition (Matching Screenshot 1) */}
-        <section className="bg-gradient-to-br from-[#0F172A] via-[#111C35] to-[#0A1428] text-white rounded-2xl p-6 sm:p-8 shadow-xl border border-slate-800 space-y-6">
-          <div className="flex items-center gap-2.5 border-b border-slate-700/60 pb-4">
-            <Globe className="w-6 h-6 text-amber-400" />
-            <h2 className="text-xl sm:text-2xl font-extrabold text-white">
+        <section className="bg-accent text-white rounded-2xl p-6 sm:p-8 shadow-xl border border-white/15 space-y-6">
+          <div className="flex items-center gap-2.5 border-b border-white/15 pb-4">
+            <Globe className="w-6 h-6 text-white/75" />
+            <h2 className="text-xl sm:text-2xl font-semibold text-white">
               International Recognition
             </h2>
           </div>
@@ -185,33 +187,33 @@ export default function AwardsRecognition() {
             {internationalHonors.map((item) => (
               <div
                 key={item.id}
-                className="bg-[#1A2642]/80 backdrop-blur-md rounded-xl p-5 border border-slate-700/80 flex flex-col justify-between space-y-4 hover:border-amber-400/40 transition-all shadow-sm"
+                className="bg-white/[0.07] backdrop-blur-md rounded-xl p-5 border border-white/15 flex flex-col justify-between space-y-4 hover:border-white/25 transition-all "
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-amber-300 bg-amber-500/20 px-2.5 py-1 rounded border border-amber-500/30">
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-white/75 bg-white/10 px-2.5 py-1 rounded border border-white/25">
                       {item.badge}
                     </span>
-                    <span className="text-xs text-slate-300 font-semibold">{item.year}</span>
+                    <span className="text-xs text-white/75 font-semibold">{item.year}</span>
                   </div>
                   <h3 className="text-sm font-bold text-white leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-[11px] text-blue-200 font-medium leading-tight">
+                  <p className="text-[11px] text-white/80 font-medium leading-tight">
                     {item.org}
                   </p>
-                  <p className="text-xs text-slate-300 leading-relaxed pt-1">
+                  <p className="text-xs text-white/75 leading-relaxed pt-1">
                     {item.desc}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-slate-700/60 flex items-center justify-between text-xs font-semibold">
+                <div className="pt-3 border-t border-white/15 flex items-center justify-between text-xs font-semibold">
                   {item.link ? (
                     <a
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-amber-300 hover:underline inline-flex items-center gap-1"
+                      className="text-white/75 underline underline-offset-[3px] decoration-label/25 hover:decoration-label inline-flex items-center gap-1 min-h-[44px]"
                     >
                       {item.actionText} <ExternalLink className="w-3 h-3" />
                     </a>
@@ -219,12 +221,12 @@ export default function AwardsRecognition() {
                     <a
                       href={item.pdf}
                       download
-                      className="text-blue-300 hover:underline inline-flex items-center gap-1"
+                      className="text-white/75 underline underline-offset-[3px] decoration-label/25 hover:decoration-label inline-flex items-center gap-1 min-h-[44px]"
                     >
                       <Download className="w-3.5 h-3.5" /> {item.actionText}
                     </a>
                   ) : (
-                    <span className="text-slate-400 text-[11px] font-medium">{item.actionText}</span>
+                    <span className="text-label-secondary text-[11px] font-medium">{item.actionText}</span>
                   )}
                 </div>
               </div>
@@ -233,10 +235,10 @@ export default function AwardsRecognition() {
         </section>
 
         {/* Second Section: National & Academic Honors */}
-        <section className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
-          <div className="flex items-center gap-2 border-b border-slate-100 pb-4">
-            <Medal className="w-5 h-5 text-blue-600" />
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
+        <section className="glass-card rounded-2xl p-6 sm:p-8 border border-white/70 space-y-6">
+          <div className="flex items-center gap-2 border-b border-white/60 pb-4">
+            <Medal className="w-5 h-5 text-label" />
+            <h2 className="text-xl sm:text-2xl font-bold text-label">
               National & Academic Honors
             </h2>
           </div>
@@ -245,18 +247,18 @@ export default function AwardsRecognition() {
             {nationalAwards.map((item) => (
               <div
                 key={item.title}
-                className="bg-slate-50 rounded-xl p-5 border border-slate-200 space-y-3"
+                className="bg-label/[0.03] rounded-xl p-5 border border-white/70 space-y-3"
               >
-                <span className="text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-100 px-2 py-0.5 rounded border border-blue-200">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-label bg-label/[0.05] px-2 py-0.5 rounded border border-separator">
                   {item.badge}
                 </span>
-                <h3 className="text-sm font-bold text-slate-900 leading-snug">
+                <h3 className="text-sm font-bold text-label leading-snug">
                   {item.title}
                 </h3>
-                <p className="text-[11px] text-slate-500 font-medium">
+                <p className="text-[11px] text-label-secondary font-medium">
                   {item.org} ({item.year})
                 </p>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-label-secondary leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -265,12 +267,12 @@ export default function AwardsRecognition() {
         </section>
 
         {/* Third Section: Certificates & Documents (Matching Screenshot 2) */}
-        <section className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
-          <div className="border-b border-slate-100 pb-4">
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
+        <section className="glass-card rounded-2xl p-6 sm:p-8 border border-white/70 space-y-6">
+          <div className="border-b border-white/60 pb-4">
+            <h2 className="text-xl sm:text-2xl font-bold text-label">
               Certificates & Documents
             </h2>
-            <p className="text-xs text-slate-500 mt-1">
+            <p className="text-xs text-label-secondary mt-1">
               Official horizontally oriented certificate previews matching credentials.
             </p>
           </div>
@@ -279,10 +281,10 @@ export default function AwardsRecognition() {
             {certificatesList.map((cert) => (
               <div
                 key={cert.id}
-                className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+                className="glass-card rounded-2xl border border-white/70 overflow-hidden transition-all flex flex-col justify-between"
               >
                 <div>
-                  <div className="relative h-44 bg-slate-100 border-b border-slate-200 overflow-hidden flex items-center justify-center p-1">
+                  <div className="relative h-44 bg-label/[0.04] border-b border-white/70 overflow-hidden flex items-center justify-center p-1">
                     <img
                       src={cert.img}
                       alt={cert.title}
@@ -290,25 +292,25 @@ export default function AwardsRecognition() {
                     />
                   </div>
                   <div className="p-4 text-center">
-                    <h3 className="text-xs font-bold text-slate-900 leading-snug">
+                    <h3 className="text-xs font-bold text-label leading-snug">
                       {cert.title}
                     </h3>
                   </div>
                 </div>
 
-                <div className="p-3 border-t border-slate-100 bg-slate-50 grid grid-cols-2 gap-2">
+                <div className="p-3 border-t border-white/60 bg-label/[0.03] grid grid-cols-2 gap-2">
                   <button
                     onClick={() => setActiveCert(cert.id)}
-                    className="inline-flex items-center justify-center gap-1 bg-white hover:bg-slate-100 text-slate-800 text-[11px] font-semibold py-1.5 rounded-lg border border-slate-200 transition-colors"
+                    className="inline-flex items-center justify-center gap-1 glass-card hover:bg-label/[0.04] text-label text-[11px] font-semibold py-1.5 rounded-lg border border-white/70 transition-colors min-h-[44px]"
                   >
-                    <Eye className="w-3.5 h-3.5 text-blue-600" /> Open
+                    <Eye className="w-3.5 h-3.5 text-label" /> Open
                   </button>
                   <a
                     href={cert.downloadPath}
                     download
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-1 bg-blue-900 hover:bg-blue-800 text-white text-[11px] font-semibold py-1.5 rounded-lg transition-colors"
+                    className="inline-flex items-center justify-center gap-1 bg-accent hover:bg-accent text-white text-[11px] font-semibold py-1.5 rounded-lg transition-colors min-h-[44px]"
                   >
                     <Download className="w-3.5 h-3.5" /> Download
                   </a>
@@ -321,24 +323,24 @@ export default function AwardsRecognition() {
 
       {/* Certificate Modal Viewer */}
       {selectedCertObj && (
-        <div className="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl space-y-4 p-6 relative animate-in fade-in zoom-in duration-200">
+        <div className="fixed inset-0 z-50 bg-accent/80 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="glass-card rounded-2xl max-w-3xl w-full overflow-hidden shadow-[0_12px_40px_-12px_hsl(0_0%_0%/0.28)] space-y-4 p-6 relative animate-in fade-in zoom-in duration-200">
             <button
               onClick={() => setActiveCert(null)}
-              className="absolute top-4 right-4 p-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors"
+              className="absolute top-4 right-4 p-2 rounded-full bg-label/[0.04] hover:bg-label/[0.06] text-label-secondary transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
             <div className="space-y-1">
-              <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">
+              <span className="text-xs font-bold text-label uppercase tracking-wider">
                 {selectedCertObj.category}
               </span>
-              <h3 className="text-lg font-bold text-slate-900">
+              <h3 className="text-lg font-bold text-label">
                 {selectedCertObj.title}
               </h3>
             </div>
 
-            <div className="max-h-[60vh] overflow-auto rounded-xl border border-slate-200 bg-slate-100 p-2">
+            <div className="max-h-[60vh] overflow-auto rounded-xl border border-white/70 bg-label/[0.04] p-2">
               <img
                 src={selectedCertObj.img}
                 alt={selectedCertObj.title}
@@ -347,13 +349,13 @@ export default function AwardsRecognition() {
             </div>
 
             <div className="flex items-center justify-between pt-2">
-              <p className="text-xs text-slate-600">{selectedCertObj.desc}</p>
+              <p className="text-xs text-label-secondary">{selectedCertObj.desc}</p>
               <a
                 href={selectedCertObj.downloadPath}
                 download
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors shrink-0"
+                className="inline-flex items-center gap-1.5 bg-accent hover:bg-accent text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors shrink-0 min-h-[44px]"
               >
                 <Download className="w-4 h-4" /> Download File / Document
               </a>

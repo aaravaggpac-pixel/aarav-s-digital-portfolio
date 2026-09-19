@@ -2,84 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ──────────────────────────────────────────────────────────────────────────
+   Apple HIG token layer — monochrome, light appearance.
+
+   Two deliberate departures from the guidelines, both requested:
+   1. Light only. Apple asks for both appearances from semantic tokens
+      (dark-mode.md); this ships light-only, so the dark block is omitted.
+   2. Glass on content cards. liquid-glass.md reserves the material for the
+      floating functional layer and calls it a defect in the content layer.
+      Since the cards use it, they get the *regular* variant — the one Apple
+      specifies for text-heavy surfaces — and a Reduce Transparency fallback.
+
+   Greys are Apple's, with one correction: Apple's #6E6E73 secondary label
+   measures 4.46:1 on this page background, just under AA, so secondary text
+   uses #636366 (5.26:1).
+   ────────────────────────────────────────────────────────────────────────── */
+
 @layer base {
   :root {
-    /* Centralized base size — scales Tailwind rem type site-wide (default 16px → 19px) */
-    --font-size-base: 19px;
+    /* Apple Body default is 17pt (typography.md › Dynamic Type sizes) */
+    --font-size-base: 17px;
 
-    --background: 0 0% 100%;
-    --foreground: 220 25% 12%;
+    /* Surfaces */
+    --bg: 240 9% 93%;          /* #ECECEF — deeper, so frost reads against it */
+    --bg-2: 240 10% 90%;
+    --surface: 0 0% 100%;      /* #FFFFFF */
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 25% 12%;
+    /* Content — Apple's light-appearance label is true black */
+    --label: 0 0% 0%;                /* #000000  17.8:1 on bg */
+    --label-secondary: 240 3% 38%;   /* #5E5E63   5.5:1 on bg, 4.96:1 on frost */
+    --separator: 240 6% 82%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 12%;
+    /* One fill, one meaning: true black (color.md › Best practices) */
+    --accent: 0 0% 0%;               /* white on it 21.0:1 */
+    --accent-hover: 0 0% 12%;        /* #1F1F1F, 16.5:1 */
+    --accent-contrast: 0 0% 100%;
 
-    --primary: 215 85% 18%;
-    --primary-foreground: 0 0% 100%;
+    /* Inverted tile */
+    --inverted: 0 0% 0%;
+    --inverted-label: 0 0% 100%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 220 25% 12%;
+    --radius: 0.75rem;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 40%;
+    --nav-bg: 240 7% 95%;
+    --nav-foreground: 240 3% 12%;
+    --footer-bg: 240 7% 95%;
+    --footer-foreground: 240 3% 12%;
 
-    --accent: 215 85% 18%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84% 60%;
+    /* shadcn aliases so stock components inherit the same decisions */
+    --background: var(--bg);
+    --foreground: var(--label);
+    --card: var(--surface);
+    --card-foreground: var(--label);
+    --popover: var(--surface);
+    --popover-foreground: var(--label);
+    --primary: var(--accent);
+    --primary-foreground: var(--accent-contrast);
+    --secondary: 240 10% 92%;
+    --secondary-foreground: var(--label);
+    --muted: 240 10% 92%;
+    --muted-foreground: var(--label-secondary);
+    --accent-foreground: var(--accent-contrast);
+    --destructive: 3 100% 45%;
     --destructive-foreground: 0 0% 100%;
+    --border: var(--separator);
+    --input: var(--separator);
+    --ring: var(--accent);
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 215 85% 18%;
-
-    --radius: 0.5rem;
-
-    --nav-bg: 215 85% 14%;
-    --nav-foreground: 0 0% 100%;
-    --footer-bg: 215 85% 12%;
-    --footer-foreground: 0 0% 92%;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: var(--bg);
+    --sidebar-foreground: var(--label);
+    --sidebar-primary: var(--accent);
+    --sidebar-primary-foreground: var(--accent-contrast);
+    --sidebar-accent: 240 10% 92%;
+    --sidebar-accent-foreground: var(--label);
+    --sidebar-border: var(--separator);
+    --sidebar-ring: var(--accent);
   }
 }
 
@@ -90,18 +87,161 @@
 
   html {
     font-size: var(--font-size-base);
+    scroll-behavior: smooth;
+    color-scheme: light;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    /* SF Pro on Apple devices, the platform's own UI face everywhere else
+       (typography.md › Platform considerations) */
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+      "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.47;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'DM Sans', 'Inter', sans-serif;
-    font-weight: 700;
-    color: hsl(var(--foreground));
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: hsl(var(--label));
+  }
+
+  ::selection {
+    background: hsl(var(--label) / 0.14);
+  }
+
+  /* Visible keyboard focus on every interactive element (accessibility.md) */
+  :focus-visible {
+    outline: 3px solid hsl(var(--label));
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
+}
+
+@layer components {
+  /* ── Liquid Glass: the floating nav island ──────────────────────────
+     Apple's current bar language — a capsule that floats over the content
+     rather than a full-width band welded to the top edge
+     (liquid-glass.md › The two layers). */
+  .nav-island {
+    background: hsl(0 0% 100% / 0.55);
+    -webkit-backdrop-filter: saturate(1.8) blur(24px);
+    backdrop-filter: saturate(1.8) blur(24px);
+    border: 1px solid hsl(0 0% 100% / 0.7);
+    box-shadow:
+      0 1px 6px -2px hsl(240 6% 8% / 0.07),
+      inset 0 1px 0 0 hsl(0 0% 100% / 0.85);
+  }
+
+  /* Automatic scroll edge effect: a bar carrying this many text labels needs
+     the more opaque separation once content scrolls under it
+     (scroll-views.md › Scroll edge effects). */
+  .nav-island-scrolled {
+    background: hsl(0 0% 100% / 0.8);
+    box-shadow:
+      0 3px 12px -4px hsl(240 6% 8% / 0.12),
+      inset 0 1px 0 0 hsl(0 0% 100% / 0.9);
+  }
+
+  /* ── Glass on the content cards ──────────────────────────────────────
+     The regular variant: Apple's choice for text-heavy surfaces. Frost,
+     a light hairline, a specular top edge, and a soft cast shadow so the
+     pane reads as sitting above the wash rather than printed on it. */
+  .glass-card {
+    background: hsl(0 0% 100% / 0.48);
+    -webkit-backdrop-filter: saturate(1.6) blur(30px);
+    backdrop-filter: saturate(1.6) blur(30px);
+    border: 1px solid hsl(0 0% 100% / 0.75);
+    box-shadow:
+      0 2px 10px -4px hsl(240 6% 8% / 0.08),
+      inset 0 1px 0 0 hsl(0 0% 100% / 0.9),
+      inset 0 -1px 0 0 hsl(0 0% 100% / 0.3);
+  }
+
+  /* Interactive panes brighten and lift on hover; the static identity card
+     keeps the resting state. */
+  .glass-card-link:hover {
+    background: hsl(0 0% 100% / 0.68);
+    border-color: hsl(0 0% 100% / 0.9);
+    box-shadow:
+      0 6px 18px -8px hsl(240 6% 8% / 0.13),
+      inset 0 1px 0 0 hsl(0 0% 100% / 0.95);
+  }
+
+  /* Scroll edge effect: content fades out as it passes beneath the floating
+     bar instead of colliding with the viewport edge
+     (scroll-views.md › Scroll edge effects). */
+  .nav-edge {
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: calc(100% + 1.5rem);
+    pointer-events: none;
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--bg)) 22%,
+      hsl(var(--bg) / 0.72) 55%,
+      hsl(var(--bg) / 0) 100%
+    );
+    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+  }
+
+  /* Apple's continuous-corner app icon (app-icons.md) */
+  .app-icon {
+    border-radius: 22.37%;
+  }
+
+  /* Pill controls, as used across apple.com */
+  .pill {
+    border-radius: 980px;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+}
+
+/* Reduce Transparency → opaque fallbacks. With glass in the content layer
+   this matters more, not less (liquid-glass.md › Accessibility states). */
+@media (prefers-reduced-transparency: reduce) {
+  .nav-island,
+  .nav-island-scrolled,
+  .glass-card,
+  .glass-card-link:hover {
+    background: hsl(var(--surface));
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+/* Increase Contrast → stronger fills and separators */
+@media (prefers-contrast: more) {
+  :root {
+    --label-secondary: 240 3% 28%;
+    --separator: 240 5% 68%;
+  }
+  .nav-island,
+  .nav-island-scrolled,
+  .glass-card,
+  .glass-card-link:hover {
+    background: hsl(var(--surface));
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    border-color: hsl(var(--separator));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

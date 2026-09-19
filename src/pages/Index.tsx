@@ -1,7 +1,45 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import {
+  ChevronRight,
+  CircuitBoard,
+  Flame,
+  FlaskConical,
+  Medal,
+  Trophy,
+  Users,
+} from "lucide-react";
+import { Reveal } from "@/components/Reveal";
+import { cn } from "@/lib/utils";
+
+/* Apple's identity mark, as an app icon (app-icons.md): a continuous-corner
+   squircle, layered fill, content centered, no text beyond the monogram. */
+function AppIcon({ className }: { className?: string }) {
+  return (
+    <span
+      className={cn(
+        "app-icon relative grid shrink-0 place-items-center overflow-hidden",
+        "bg-gradient-to-b from-[#2E2E30] to-[#000000]",
+        "shadow-[inset_0_1px_0_0_rgb(255_255_255/0.28),0_6px_16px_-6px_rgb(0_0_0/0.45)]",
+        className,
+      )}
+      aria-hidden
+    >
+      <span className="relative font-semibold leading-none tracking-[-0.04em] text-white">
+        AA
+      </span>
+    </span>
+  );
+}
 
 export default function Index() {
+  const roles = ["Student Researcher", "Engineer", "Climate Innovator"];
+
+  const credentials = [
+    "SAT: 1570/1600",
+    "AP Scholar (CS-A: 5, Macro: 5, Micro: 5)",
+    "GPA: 4.43",
+  ];
+
   const quickNavCards = [
     {
       title: "Urban Heat Stress",
@@ -9,6 +47,8 @@ export default function Index() {
       desc: "Founded Roof of Hope & Cool Play to counter urban heat stress; 100 cool roofs in Delhi scaling to 4,000; 60+ cooling jackets for youth athletes.",
       path: "/urban-heat-stress",
       badge: "Climate Impact",
+      icon: Flame,
+      wide: false,
     },
     {
       title: "Engineering & Technology",
@@ -16,6 +56,8 @@ export default function Index() {
       desc: "Penn M&TSI program, MobileNetV2 leaf identification (~85% accuracy), IPL predictive ML model, and bio-cell battery patent.",
       path: "/engineering-technology",
       badge: "Hardware & AI",
+      icon: CircuitBoard,
+      wide: false,
     },
     {
       title: "Research",
@@ -23,6 +65,8 @@ export default function Index() {
       desc: "NHSJS IPL batting archetypes paper, IC2UHI 2026 conference presentation, Aloe Vera bio-cell battery design patents, and acoustic metamaterials study.",
       path: "/research",
       badge: "Peer-Reviewed & Patents",
+      icon: FlaskConical,
+      wide: false,
     },
     {
       title: "Leadership & Mentoring",
@@ -30,6 +74,8 @@ export default function Index() {
       desc: "TA invited by Prof. Ravi Jasuja at Plaksha University (80 students), VP leading literacy drives for 100+ readers with NLB Singapore.",
       path: "/leadership-mentoring",
       badge: "Community & TA",
+      icon: Users,
+      wide: true,
     },
     {
       title: "Cricket",
@@ -37,6 +83,8 @@ export default function Index() {
       desc: "Singapore U16 National Squad Runner-Up (ACC 2025), SCA Men's League Div 1, and Stumps & Stories tournament honoring migrant workers.",
       path: "/cricket",
       badge: "National Athlete",
+      icon: Trophy,
+      wide: true,
     },
     {
       title: "Awards & Recognition",
@@ -44,118 +92,212 @@ export default function Index() {
       desc: "CREST Gold Award, IC2UHI Invited Presenter, Elaine Hobson Essay Winner, TIMO Bronze Medalist, and PADI Scuba Diver.",
       path: "/awards-recognition",
       badge: "Honors & Medals",
+      icon: Medal,
+      wide: false,
     },
   ];
 
+  const [feature, ...rest] = quickNavCards;
+  const FeatureIcon = feature.icon;
+
   return (
-    <div className="bg-slate-50 min-h-screen text-slate-800">
-      {/* Hero — text left, image right */}
-      <section className="relative bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800 text-white pt-12 pb-16 px-4 sm:px-6 lg:px-8 border-b border-slate-700">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center gap-10 md:gap-14">
-          {/* Hero copy (left) */}
-          <div className="text-center md:text-left space-y-4 flex-1 order-2 md:order-1">
-            <div className="inline-block bg-blue-500/20 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full border border-blue-400/30 uppercase tracking-wider">
-              High School Researcher & Innovator
-            </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-              Aarav Aggarwal
-            </h1>
-            <p className="text-base sm:text-lg text-blue-200 font-medium max-w-2xl">
-              Student Researcher | Engineer | Climate Innovator
+    <div className="text-label">
+      {/* ─────────────────────────  HERO  ───────────────────────── */}
+      <section className="relative isolate flex min-h-[calc(100svh-4.25rem)] items-center px-5 py-14 sm:px-8">
+
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-12 lg:gap-16">
+          {/* Copy */}
+          <Reveal className="lg:col-span-7">
+            <p className="text-[0.82rem] font-semibold text-label-secondary">
+              High School Researcher &amp; Innovator
             </p>
 
-            <p className="text-xs sm:text-sm text-slate-200 max-w-2xl leading-relaxed">
+            <h1 className="mt-3 text-[clamp(2.6rem,6vw,4.1rem)] font-semibold leading-[1.05] tracking-[-0.035em] text-label">
+              Aarav Aggarwal
+            </h1>
+
+            <p className="mt-4 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[1.18rem] leading-snug text-label-secondary">
+              {roles.map((role, i) => (
+                <span key={role} className="inline-flex items-center gap-2.5">
+                  {i > 0 && (
+                    <span aria-hidden className="text-separator">
+                      |
+                    </span>
+                  )}
+                  {role}
+                </span>
+              ))}
+            </p>
+
+            <p className="mt-6 max-w-[60ch] text-[1rem] leading-[1.6] text-label-secondary text-pretty">
               I am Aarav Aggarwal, a high school student at Singapore American School driven by a passion for leveraging technology, engineering research, and community action to solve complex real-world challenges. From founding Roof of Hope (scaling cool-roof interventions across 4,000 homes in India) to conducting machine learning internships and representing Singapore in international cricket, I strive for excellence across research, sports, and societal impact.
             </p>
 
-            <div className="bg-white/10 backdrop-blur-sm p-3.5 rounded-xl border border-white/15 inline-block text-xs sm:text-sm text-blue-100 font-medium">
-              SAT: 1570/1600 · AP Scholar (CS-A: 5, Macro: 5, Micro: 5) · GPA: 4.43
-            </div>
-
-            <div className="pt-2 flex flex-wrap items-center justify-center md:justify-start gap-3">
+            {/* One filled action, two glass ones — style, not size, separates
+               them (buttons.md › Style) */}
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
                 href="/AaravResumeJan-17-2026.pdf"
                 download="AaravResumeJan-17-2026.pdf"
-                className="inline-flex items-center bg-blue-600 hover:bg-blue-500 text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition-all shadow-md hover:shadow-blue-500/25"
+                className="pill inline-flex min-h-[44px] items-center bg-accent px-6 text-[1rem] text-accent-foreground transition-colors duration-200 hover:bg-accent-hover"
               >
                 Download Resume
               </a>
+
               <a
                 href="https://www.linkedin.com/in/aarav-aggarwal-085b21357/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center bg-slate-800 hover:bg-slate-700 text-slate-100 font-medium px-4 py-2.5 rounded-lg text-sm border border-slate-700 transition-colors"
+                className="glass-card glass-card-link pill group inline-flex min-h-[44px] items-center px-6 text-[1rem] text-label transition-all duration-200"
               >
                 LinkedIn
+                <ChevronRight
+                  className="ml-0.5 h-[1.05em] w-[1.05em] transition-transform duration-200 group-hover:translate-x-0.5"
+                  aria-hidden
+                />
               </a>
+
               <a
                 href="mailto:aaravagg.pac@gmail.com"
-                className="inline-flex items-center bg-slate-800 hover:bg-slate-700 text-slate-100 font-medium px-4 py-2.5 rounded-lg text-sm border border-slate-700 transition-colors"
+                className="glass-card glass-card-link pill group inline-flex min-h-[44px] items-center px-6 text-[1rem] text-label transition-all duration-200"
               >
                 Email Me
+                <ChevronRight
+                  className="ml-0.5 h-[1.05em] w-[1.05em] transition-transform duration-200 group-hover:translate-x-0.5"
+                  aria-hidden
+                />
               </a>
             </div>
-          </div>
 
-          {/* Photo frame (right) */}
-          <div className="relative shrink-0 mx-auto md:mx-0 order-1 md:order-2">
-            <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-2xl border border-blue-400/40 bg-slate-900 p-1.5 shadow-2xl">
-              <div className="w-full h-full rounded-xl bg-slate-900 flex flex-col items-center justify-center text-center overflow-hidden border border-slate-700 p-6">
-                <div className="w-36 h-36 sm:w-44 sm:h-44 lg:w-48 lg:h-48 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center text-white text-5xl sm:text-6xl font-extrabold mb-4">
-                  AA
+            {/* Credentials, grouped and separated by a hairline (layout.md) */}
+            <dl className="mt-10 flex flex-wrap gap-x-7 gap-y-4 border-t border-separator pt-6">
+              {credentials.map((item) => (
+                <dd key={item} className="text-[0.88rem] leading-snug text-label-secondary">
+                  {item}
+                </dd>
+              ))}
+            </dl>
+          </Reveal>
+
+          {/* Identity card — the App Store product header, applied to a person */}
+          <Reveal className="lg:col-span-5" delay={140}>
+            <div className="glass-card mx-auto w-full max-w-sm rounded-tile-lg p-7 lg:max-w-none">
+              <div className="flex items-center gap-4">
+                <AppIcon className="h-[72px] w-[72px] text-[1.6rem]" />
+                <div className="min-w-0">
+                  <p className="truncate text-[1.29rem] font-semibold leading-tight tracking-[-0.02em] text-label">
+                    Aarav Aggarwal
+                  </p>
+                  <p className="mt-1 text-[0.94rem] text-label-secondary">SAS High School</p>
                 </div>
-                <span className="text-lg sm:text-xl font-bold text-white leading-tight">Aarav Aggarwal</span>
-                <span className="text-sm text-blue-300 font-medium mt-1">SAS High School</span>
               </div>
+
+              <p className="mt-6 border-t border-white/60 pt-5 text-[0.88rem] font-semibold text-label">
+                High School Researcher &amp; Innovator
+              </p>
             </div>
-            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0 bg-blue-600 text-white text-xs sm:text-sm px-4 py-1.5 rounded-full font-semibold border border-blue-400 shadow-md whitespace-nowrap">
-              High School Researcher & Innovator
-            </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* Quick Navigation Cards */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
-        <div className="text-center mb-10 space-y-2">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
-            Explore Focus Areas
-          </h2>
-          <p className="text-slate-600 text-sm max-w-xl mx-auto">
-            Click on any card below to navigate directly to detailed projects, publications, and initiatives.
-          </p>
-          <div className="w-16 h-1 bg-blue-900 mx-auto rounded mt-2" />
-        </div>
+      {/* ──────────────────  EXPLORE FOCUS AREAS  ────────────────── */}
+      <section className="relative isolate px-5 pb-24 pt-6 sm:px-8">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {quickNavCards.map((card) => (
-            <Link
-              key={card.title}
-              to={card.path}
-              className="group bg-white rounded-xl p-6 border border-slate-200 hover:border-slate-400 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between"
-            >
+        <div className="mx-auto max-w-6xl">
+          <Reveal className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-12">
+            <h2 className="text-[clamp(1.9rem,4vw,2.6rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-label text-balance">
+              Explore Focus Areas
+            </h2>
+            <p className="max-w-md text-[0.94rem] leading-snug text-label-secondary md:text-right">
+              Click on any card below to navigate directly to detailed projects, publications, and initiatives.
+            </p>
+          </Reveal>
+
+          <div className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {/* Feature tile — the one solid black surface anchors the grid */}
+            <Reveal className="lg:col-span-2">
+              <Link
+                to={feature.path}
+                className="group flex h-full flex-col justify-between rounded-tile-lg bg-inverted p-8 text-inverted-label shadow-[0_3px_14px_-6px_hsl(0_0%_0%/0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-10px_hsl(0_0%_0%/0.3)] sm:p-10"
+              >
               <div>
-                <span className="inline-block text-[11px] font-semibold text-slate-500 uppercase tracking-wider mb-3">
-                  {card.badge}
-                </span>
+                <div className="flex items-start justify-between gap-6">
+                  <FeatureIcon className="h-7 w-7 opacity-90" strokeWidth={1.5} aria-hidden />
+                  <span className="text-[0.82rem] opacity-70">{feature.badge}</span>
+                </div>
 
-                <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-900 transition-colors mb-1">
-                  {card.title}
+                <h3 className="mt-7 text-[clamp(1.8rem,3.2vw,2.4rem)] font-semibold leading-[1.08] tracking-[-0.03em] text-inverted-label">
+                  {feature.title}
                 </h3>
-                <p className="text-xs font-semibold text-blue-800 mb-3">
-                  {card.subtitle}
-                </p>
-                <p className="text-slate-600 text-xs leading-relaxed mb-6">
-                  {card.desc}
+                <p className="mt-2 text-[1rem] opacity-85">{feature.subtitle}</p>
+                <p className="mt-4 max-w-[52ch] text-[0.94rem] leading-[1.6] opacity-70 text-pretty">
+                  {feature.desc}
                 </p>
               </div>
 
-              <div className="flex items-center gap-2 text-xs font-semibold text-blue-900 group-hover:gap-3 transition-all border-t border-slate-100 pt-4">
-                <span>Explore Page</span>
-                <ArrowRight className="w-3.5 h-3.5" aria-hidden />
-              </div>
-            </Link>
-          ))}
+                <span className="mt-8 inline-flex items-center text-[0.94rem] text-inverted-label">
+                  Explore Page
+                  <ChevronRight
+                    className="ml-0.5 h-[1.05em] w-[1.05em] transition-transform duration-200 group-hover:translate-x-0.5"
+                    aria-hidden
+                  />
+                </span>
+              </Link>
+            </Reveal>
+
+            {/* Frosted tiles */}
+            {rest.map((card, i) => {
+              const Icon = card.icon;
+              return (
+                <Reveal
+                  key={card.title}
+                  className={cn(card.wide && "lg:col-span-2")}
+                  delay={60 * (i + 1)}
+                >
+                  <Link
+                    to={card.path}
+                    className={cn(
+                      "glass-card glass-card-link group flex h-full flex-col justify-between rounded-tile-lg p-7 transition-all duration-300 hover:-translate-y-1",
+                      card.wide && "lg:p-9",
+                    )}
+                  >
+                  <div>
+                    <div className="flex items-start justify-between gap-5">
+                      <Icon className="h-6 w-6 text-label" strokeWidth={1.5} aria-hidden />
+                      <span className="text-[0.82rem] text-label-secondary">{card.badge}</span>
+                    </div>
+
+                    <h3
+                      className={cn(
+                        "mt-7 font-semibold leading-[1.15] tracking-[-0.025em] text-label",
+                        card.wide ? "text-[1.6rem]" : "text-[1.29rem]",
+                      )}
+                    >
+                      {card.title}
+                    </h3>
+                    <p className="mt-1.5 text-[0.94rem] text-label-secondary">{card.subtitle}</p>
+                    <p
+                      className={cn(
+                        "mt-4 text-[0.94rem] leading-[1.6] text-label-secondary text-pretty",
+                        card.wide && "max-w-[54ch]",
+                      )}
+                    >
+                      {card.desc}
+                    </p>
+                  </div>
+
+                    <span className="mt-7 inline-flex items-center text-[0.94rem] font-medium text-label">
+                      Explore Page
+                      <ChevronRight
+                        className="ml-0.5 h-[1.05em] w-[1.05em] transition-transform duration-200 group-hover:translate-x-0.5"
+                        aria-hidden
+                      />
+                    </span>
+                  </Link>
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
       </section>
     </div>

@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from "./components/Navbar";
+import { Wash } from "./components/Wash";
 import Footer from "./components/Footer";
 
 // Pages
@@ -25,7 +26,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="min-h-screen flex flex-col font-sans bg-slate-50 text-slate-800">
+        <div className="min-h-screen flex flex-col font-sans bg-background text-label">
+          <Wash />
           <Navbar />
           <main className="flex-1">
             <Routes>
