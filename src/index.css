@@ -179,16 +179,21 @@
   .nav-edge {
     position: absolute;
     inset: 0 0 auto 0;
-    height: calc(100% + 1.5rem);
+    height: calc(100% + 2rem);
     pointer-events: none;
     background: linear-gradient(
       to bottom,
-      hsl(var(--bg)) 22%,
-      hsl(var(--bg) / 0.72) 55%,
+      hsl(var(--bg)) 20%,
+      hsl(var(--bg) / 0.7) 55%,
       hsl(var(--bg) / 0) 100%
     );
-    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+    /* Content softens as it travels under the bar rather than staying sharp
+       right up to the edge; the mask makes the blur itself fade out, so there
+       is no seam where the effect stops. */
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    -webkit-mask-image: linear-gradient(to bottom, #000 50%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 50%, transparent 100%);
   }
 
   /* Apple's continuous-corner app icon (app-icons.md) */
@@ -203,6 +208,16 @@
 }
 
 @layer utilities {
+  /* The rail scrolls by swipe, keyboard and the paired buttons, so the bar
+     itself is noise; the peeking next frame is the affordance. */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
   .text-balance { text-wrap: balance; }
   .text-pretty { text-wrap: pretty; }
 }
@@ -215,6 +230,10 @@
   .glass-card,
   .glass-card-link:hover {
     background: hsl(var(--surface));
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .nav-edge {
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
   }

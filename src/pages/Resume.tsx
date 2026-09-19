@@ -35,7 +35,7 @@ export default function Resume() {
             <a
               href="/AaravResumeJan-17-2026.pdf"
               download="AaravResumeJan-17-2026.pdf"
-              className="inline-flex items-center gap-2 bg-accent hover:bg-accent text-white font-semibold px-5 py-2.5 rounded-lg text-xs transition-all cursor-pointer min-h-[44px]"
+              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-semibold px-5 py-2.5 rounded-lg text-xs transition-all cursor-pointer min-h-[44px]"
             >
               <Download className="w-4 h-4" /> Download Resume PDF
             </a>
@@ -279,7 +279,7 @@ export default function Resume() {
             <a
               href="/AaravResumeJan-17-2026.pdf"
               download="AaravResumeJan-17-2026.pdf"
-              className="inline-flex items-center gap-2 bg-accent hover:bg-accent text-white font-bold px-6 py-3 rounded-xl text-xs transition-all  min-h-[44px]"
+              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-xl text-xs transition-all  min-h-[44px]"
             >
               <Download className="w-4 h-4" /> Download Official Resume PDF (AaravResumeJan-17-2026.pdf)
             </a>

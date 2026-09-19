@@ -181,18 +181,31 @@ export default function Index() {
 
           {/* Identity card — the App Store product header, applied to a person */}
           <Reveal className="lg:col-span-5" delay={140}>
-            <div className="glass-card mx-auto w-full max-w-sm rounded-tile-lg p-7 lg:max-w-none">
-              <div className="flex items-center gap-4">
-                <AppIcon className="h-[72px] w-[72px] text-[1.6rem]" />
+            <div className="glass-card mx-auto w-full max-w-sm rounded-tile-lg p-3 lg:max-w-none">
+              {/* Eager + fetchPriority: this is the hero image, so it should not
+                  wait behind lazy assets (performance › image-optimization) */}
+              <img
+                src="/images/aarav-portrait.jpg"
+                alt="Aarav Aggarwal in Singapore national cricket kit at an ACC fixture"
+                width={800}
+                height={800}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                className="aspect-square w-full rounded-[0.95rem] object-cover"
+              />
+
+              <div className="flex items-center gap-3.5 px-3 pb-1 pt-4">
+                <AppIcon className="h-[42px] w-[42px] text-[0.95rem]" />
                 <div className="min-w-0">
-                  <p className="truncate text-[1.29rem] font-semibold leading-tight tracking-[-0.02em] text-label">
+                  <p className="truncate text-[1.12rem] font-semibold leading-tight tracking-[-0.02em] text-label">
                     Aarav Aggarwal
                   </p>
-                  <p className="mt-1 text-[0.94rem] text-label-secondary">SAS High School</p>
+                  <p className="mt-0.5 text-[0.88rem] text-label-secondary">SAS High School</p>
                 </div>
               </div>
 
-              <p className="mt-6 border-t border-white/60 pt-5 text-[0.88rem] font-semibold text-label">
+              <p className="mx-3 mt-3.5 border-t border-white/60 pb-1 pt-3.5 text-[0.82rem] font-semibold text-label">
                 High School Researcher &amp; Innovator
               </p>
             </div>

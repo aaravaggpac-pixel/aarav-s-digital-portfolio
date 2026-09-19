@@ -2,6 +2,8 @@ import { useState } from "react";
 import { ExternalLink, Flame, ShieldCheck, Award, FileText } from "lucide-react";
 import { useScrollToHash } from "@/hooks/use-scroll-to-hash";
 import { useAutoReveal } from "@/components/Reveal";
+import { Gallery } from "@/components/Gallery";
+import { coolPlayPhotos, roofOfHopePhotos } from "@/lib/galleries";
 
 export default function UrbanHeatStress() {
   useAutoReveal();
@@ -72,7 +74,7 @@ export default function UrbanHeatStress() {
                 href="https://www.roofofhope.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-accent hover:bg-accent text-white font-semibold text-xs px-4 py-2 rounded-lg transition-colors self-start sm:self-auto min-h-[44px]"
+                className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-semibold text-xs px-4 py-2 rounded-lg transition-colors self-start sm:self-auto min-h-[44px]"
               >
                 roofofhope.org <ExternalLink className="w-3.5 h-3.5" />
               </a>
@@ -204,21 +206,8 @@ export default function UrbanHeatStress() {
               </div>
             </div>
 
-            {/* Images & Video */}
-            <div className="space-y-4 pt-2">
-              <h3 className="text-sm font-bold text-label">Deployment Media</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <img
-                  src="https://static.wixstatic.com/media/02b2cd_0ba9a640910746a9bc82ea2a107ed90d~mv2.jpg"
-                  alt="Roof of Hope installation"
-                  className="w-full h-56 object-cover rounded-xl border border-white/70"
-                />
-                <img
-                  src="https://static.wixstatic.com/media/02b2cd_d0a9ac65fc9547c896e91b6bec80472c~mv2.jpg"
-                  alt="Bakkarwala cool roof"
-                  className="w-full h-56 object-cover rounded-xl border border-white/70"
-                />
-              </div>
+            <div className="border-t border-white/60 pt-7">
+              <Gallery title="From the field" images={roofOfHopePhotos} />
             </div>
           </section>
         )}
@@ -247,13 +236,15 @@ export default function UrbanHeatStress() {
             </div>
 
             {/* Lead image */}
-            <div className="rounded-xl overflow-hidden border border-white/70">
+            <figure className="glass-card overflow-hidden rounded-tile-lg p-1.5">
               <img
                 src="/images/cool-play/lead-cooling-jacket.jpg"
-                alt="Young athletes wearing reusable cooling jackets"
-                className="w-full max-h-[28rem] object-cover"
+                alt="Young athletes wearing reusable cooling jackets during training"
+                loading="lazy"
+                decoding="async"
+                className="aspect-[16/9] w-full rounded-[0.8rem] object-cover"
               />
-            </div>
+            </figure>
 
             {/* Campaign results */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -306,25 +297,7 @@ export default function UrbanHeatStress() {
             {/* Photos of athletes */}
             <div className="space-y-4">
               <h3 className="text-sm font-bold text-label">Young Athletes Wearing Reusable Cooling Jackets</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {[
- "athletes-01.jpg",
- "athletes-02.jpg",
- "athletes-03.jpg",
- "athletes-04.jpg",
- "athletes-05.jpg",
- "athletes-06.jpg",
- "athletes-07.jpg",
- "athletes-08.jpg",
-                ].map((file) => (
-                  <img
-                    key={file}
-                    src={`/images/cool-play/${file}`}
-                    alt="Young athletes wearing reusable cooling jackets while training in heat"
-                    className="w-full h-40 sm:h-48 object-cover rounded-xl border border-white/70"
-                  />
-                ))}
-              </div>
+              <Gallery title="Cool Play in action" images={coolPlayPhotos} />
               <p className="text-xs text-label-secondary">
                 Photos from the Cool Play / Fuel A Dream campaign — athletes training under extreme temperatures with cooling jackets.
               </p>

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Trophy, ExternalLink, Heart } from "lucide-react";
 import { useScrollToHash } from "@/hooks/use-scroll-to-hash";
 import { useAutoReveal } from "@/components/Reveal";
+import { Gallery } from "@/components/Gallery";
+import { cricketPhotos } from "@/lib/galleries";
 
 type CricketTab = "national" | "club" | "stumps";
 
@@ -99,18 +101,22 @@ export default function Cricket() {
               </p>
             </div>
 
-            <div className="bg-label/[0.03] p-4 rounded-xl border border-white/70 text-xs text-label-secondary">
-              <span className="font-bold text-label">Official Asian Cricket Council Match Record:</span>
+            <div className="glass-card rounded-tile-lg p-4 text-xs text-label-secondary">
+              <span className="font-semibold text-label">Official Asian Cricket Council Match Record:</span>
               <p className="pt-1">
                 <a
                   href="https://www.asiancricket.org/match/234/1993"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-label underline underline-offset-[3px] decoration-label/25 hover:decoration-label flex items-center gap-1 font-mono"
+                  className="pill mt-2 inline-flex min-h-[44px] items-center gap-2 bg-accent px-5 text-[0.82rem] font-medium text-white transition-colors duration-200 hover:bg-accent-hover"
                 >
-                  https://www.asiancricket.org/match/234/1993 <ExternalLink className="w-3 h-3" />
+                  View match record on asiancricket.org
+                  <ExternalLink className="h-3.5 w-3.5" aria-hidden />
                 </a>
               </p>
+            </div>
+            <div className="border-t border-white/60 pt-7">
+              <Gallery title="Match photos" images={cricketPhotos} />
             </div>
           </section>
         )}

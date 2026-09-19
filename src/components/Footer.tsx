@@ -14,18 +14,18 @@ const exploreLinks = [
 ];
 
 const linkClass =
-  "inline-flex min-h-[44px] items-center text-[0.76rem] text-label-secondary transition-opacity duration-200 hover:opacity-70 sm:min-h-[32px]";
+  "inline-flex min-h-[44px] items-center text-[0.74rem] text-label-secondary transition-opacity duration-200 hover:opacity-70 sm:min-h-[26px]";
 
-const headingClass = "mb-2 text-[0.76rem] font-semibold text-label";
+const headingClass = "mb-1.5 text-[0.72rem] font-semibold text-label";
 
 export default function Footer() {
   return (
     <footer className="relative border-t border-separator px-5 sm:px-8">
-      <div className="mx-auto max-w-6xl py-10">
-        <div className="grid grid-cols-2 gap-x-8 gap-y-8 md:grid-cols-4">
+      <div className="mx-auto max-w-6xl py-7">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-6 md:grid-cols-4">
           <div>
             <h2 className={headingClass}>Aarav Aggarwal</h2>
-            <p className="text-[0.76rem] leading-relaxed text-label-secondary">
+            <p className="text-[0.74rem] leading-snug text-label-secondary">
               Student Researcher | Engineer | Climate Innovator
             </p>
           </div>
@@ -96,7 +96,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="mt-9 border-t border-separator pt-5 text-[0.71rem] text-label-secondary">
+        <p className="mt-6 border-t border-separator pt-4 text-[0.7rem] text-label-secondary">
           © 2026 Aarav Aggarwal. All rights reserved.
         </p>
       </div>

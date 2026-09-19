@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Cpu, ExternalLink, FileText, Download } from "lucide-react";
 import { useScrollToHash } from "@/hooks/use-scroll-to-hash";
 import { useAutoReveal } from "@/components/Reveal";
+import { Gallery } from "@/components/Gallery";
+import { bioCellPhotos, mtsiPhotos } from "@/lib/galleries";
 
 type TabType = "datapitch" | "mtsi" | "biocell" | "acoustic" | "plaksha" | "mynzo" | "ceew";
 
@@ -153,6 +155,9 @@ export default function EngineeringTechnology() {
               </a>{" "}
               at University of Pennsylvania. Worked on interdisciplinary technology prototyping, commercial management, and product launch validation.
             </p>
+            <div className="border-t border-white/60 pt-7">
+              <Gallery title="Build photos" images={mtsiPhotos} aspect="portrait" />
+            </div>
           </section>
         )}
 
@@ -187,6 +192,9 @@ export default function EngineeringTechnology() {
               <p>Design Application: 497516-001</p>
               <p>Design Application: 497539–001</p>
               <p>Design Application: 497540-001</p>
+            </div>
+            <div className="border-t border-white/60 pt-7">
+              <Gallery title="Prototype gallery" images={bioCellPhotos} aspect="portrait" />
             </div>
           </section>
         )}

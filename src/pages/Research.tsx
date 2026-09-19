@@ -78,11 +78,20 @@ export default function Research() {
               Published at <strong>The National High School Journal of Science (NHSJS)</strong>. Analyzed IPL player performance using K-Means clustering, Principal Component Analysis (PCA), and Linear Regression models to evaluate role composition and squad balance in T20 cricket.
             </p>
 
-            <div className="bg-label/[0.03] p-4 rounded-xl border border-white/70 space-y-2 text-xs">
-              <span className="font-bold text-label">Direct Link:</span>
-              <p className="break-all font-mono text-label">
-                https://nhsjs.com/2026/batting-archetypes-and-team-success-analyzing-the-role-composition-of-teams-in-indian-premier-league-using-machine-learning
-              </p>
+            <div className="glass-card flex flex-wrap items-center justify-between gap-4 rounded-tile-lg p-4">
+              <div>
+                <p className="text-[0.82rem] font-semibold text-label">Direct Link</p>
+                <p className="text-[0.78rem] text-label-secondary">nhsjs.com · The National High School Journal of Science</p>
+              </div>
+              <a
+                href="https://nhsjs.com/2026/batting-archetypes-and-team-success-analyzing-the-role-composition-of-teams-in-indian-premier-league-using-machine-learning"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pill inline-flex min-h-[44px] shrink-0 items-center gap-2 bg-accent px-5 text-[0.82rem] font-medium text-white transition-colors duration-200 hover:bg-accent-hover"
+              >
+                Read the paper
+                <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+              </a>
             </div>
           </section>
         )}

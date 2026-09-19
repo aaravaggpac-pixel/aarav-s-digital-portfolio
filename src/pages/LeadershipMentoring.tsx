@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Users, ExternalLink } from "lucide-react";
 import { useScrollToHash } from "@/hooks/use-scroll-to-hash";
 import { useAutoReveal } from "@/components/Reveal";
+import { Gallery } from "@/components/Gallery";
+import { ytsPhotos } from "@/lib/galleries";
 
 type LeadTab = "yts" | "readtolead";
 
@@ -90,6 +92,9 @@ export default function LeadershipMentoring() {
               <p>
                 The following summer, when I was invited back as a Teaching Assistant, I was tasked with mentoring 80+ students. I taught them about the complexities of ESP-32 micro-controllers and transmission of signals for teleoperation bots, which proved far more challenging than I first expected. When students asked me thought-provoking questions, it forced me to go to the depths of my understanding. I also had to tailor my approach to different students: some with textbooks, some with videos, and some by doing and failing. Guiding students through this process instilled in me a lifelong love for mentoring and reinforced my commitment to making technology more accessible to others.
               </p>
+            </div>
+            <div className="border-t border-white/60 pt-7">
+              <Gallery title="From the cohort" images={ytsPhotos} aspect="portrait" />
             </div>
           </section>
         )}

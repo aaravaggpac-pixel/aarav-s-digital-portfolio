@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Lightbox } from "@/components/Lightbox";
 import { Globe, Medal, ExternalLink, Download, Eye, X, Award } from "lucide-react";
 import { useScrollToHash } from "@/hooks/use-scroll-to-hash";
 import { useAutoReveal } from "@/components/Reveal";
@@ -175,45 +176,45 @@ export default function AwardsRecognition() {
         </div>
 
         {/* First Section: International Recognition (Matching Screenshot 1) */}
-        <section className="bg-accent text-white rounded-2xl p-6 sm:p-8 shadow-xl border border-white/15 space-y-6">
-          <div className="flex items-center gap-2.5 border-b border-white/15 pb-4">
-            <Globe className="w-6 h-6 text-white/75" />
-            <h2 className="text-xl sm:text-2xl font-semibold text-white">
+        <section className="space-y-6">
+          <div className="flex items-center gap-2.5 border-b border-separator pb-4">
+            <Globe className="w-5 h-5 text-label-secondary" aria-hidden />
+            <h2 className="text-xl sm:text-2xl font-semibold text-label">
               International Recognition
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {internationalHonors.map((item) => (
               <div
                 key={item.id}
-                className="bg-white/[0.07] backdrop-blur-md rounded-xl p-5 border border-white/15 flex flex-col justify-between space-y-4 hover:border-white/25 transition-all "
+                className="glass-card glass-card-link flex flex-col justify-between space-y-4 rounded-tile-lg p-5 transition-transform duration-300 hover:-translate-y-0.5"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-semibold uppercase tracking-wider text-white/75 bg-white/10 px-2.5 py-1 rounded border border-white/25">
+                    <span className="text-[0.7rem] font-medium text-label-secondary bg-label/[0.05] px-2.5 py-1 rounded-md border border-separator">
                       {item.badge}
                     </span>
-                    <span className="text-xs text-white/75 font-semibold">{item.year}</span>
+                    <span className="text-[0.76rem] text-label-secondary">{item.year}</span>
                   </div>
-                  <h3 className="text-sm font-bold text-white leading-snug">
+                  <h3 className="text-[0.95rem] font-semibold text-label leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-[11px] text-white/80 font-medium leading-tight">
+                  <p className="text-[0.8rem] text-label-secondary leading-snug">
                     {item.org}
                   </p>
-                  <p className="text-xs text-white/75 leading-relaxed pt-1">
+                  <p className="text-[0.82rem] text-label-secondary leading-relaxed pt-1">
                     {item.desc}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-white/15 flex items-center justify-between text-xs font-semibold">
+                <div className="pt-3 border-t border-separator flex items-center justify-between text-[0.8rem]">
                   {item.link ? (
                     <a
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/75 underline underline-offset-[3px] decoration-label/25 hover:decoration-label inline-flex items-center gap-1 min-h-[44px]"
+                      className="text-label font-medium underline underline-offset-[3px] decoration-label/25 hover:decoration-label inline-flex items-center gap-1 min-h-[44px]"
                     >
                       {item.actionText} <ExternalLink className="w-3 h-3" />
                     </a>
@@ -221,7 +222,7 @@ export default function AwardsRecognition() {
                     <a
                       href={item.pdf}
                       download
-                      className="text-white/75 underline underline-offset-[3px] decoration-label/25 hover:decoration-label inline-flex items-center gap-1 min-h-[44px]"
+                      className="text-label font-medium underline underline-offset-[3px] decoration-label/25 hover:decoration-label inline-flex items-center gap-1 min-h-[44px]"
                     >
                       <Download className="w-3.5 h-3.5" /> {item.actionText}
                     </a>
@@ -243,11 +244,11 @@ export default function AwardsRecognition() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {nationalAwards.map((item) => (
               <div
                 key={item.title}
-                className="bg-label/[0.03] rounded-xl p-5 border border-white/70 space-y-3"
+                className="space-y-3 rounded-tile-lg border border-white/70 bg-label/[0.03] p-5"
               >
                 <span className="text-[10px] font-bold uppercase tracking-wider text-label bg-label/[0.05] px-2 py-0.5 rounded border border-separator">
                   {item.badge}
@@ -277,92 +278,58 @@ export default function AwardsRecognition() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
             {certificatesList.map((cert) => (
-              <div
+              <button
                 key={cert.id}
-                className="glass-card rounded-2xl border border-white/70 overflow-hidden transition-all flex flex-col justify-between"
+                type="button"
+                onClick={() => setActiveCert(cert.id)}
+                aria-label={`Open: ${cert.title}`}
+                className="glass-card glass-card-link group flex flex-col overflow-hidden rounded-tile-lg p-1.5 text-left transition-transform duration-300 hover:-translate-y-0.5"
               >
-                <div>
-                  <div className="relative h-44 bg-label/[0.04] border-b border-white/70 overflow-hidden flex items-center justify-center p-1">
-                    <img
-                      src={cert.img}
-                      alt={cert.title}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <div className="p-4 text-center">
-                    <h3 className="text-xs font-bold text-label leading-snug">
-                      {cert.title}
-                    </h3>
-                  </div>
-                </div>
-
-                <div className="p-3 border-t border-white/60 bg-label/[0.03] grid grid-cols-2 gap-2">
-                  <button
-                    onClick={() => setActiveCert(cert.id)}
-                    className="inline-flex items-center justify-center gap-1 glass-card hover:bg-label/[0.04] text-label text-[11px] font-semibold py-1.5 rounded-lg border border-white/70 transition-colors min-h-[44px]"
+                <span className="relative block overflow-hidden rounded-[0.8rem] bg-label/[0.04]">
+                  <img
+                    src={cert.img}
+                    alt={cert.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-[4/3] w-full object-contain p-2"
+                  />
+                  <span
+                    aria-hidden
+                    className="absolute inset-0 grid place-items-center opacity-0 transition-opacity duration-200 group-hover:opacity-100"
                   >
-                    <Eye className="w-3.5 h-3.5 text-label" /> Open
-                  </button>
-                  <a
-                    href={cert.downloadPath}
-                    download
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-1 bg-accent hover:bg-accent text-white text-[11px] font-semibold py-1.5 rounded-lg transition-colors min-h-[44px]"
-                  >
-                    <Download className="w-3.5 h-3.5" /> Download
-                  </a>
-                </div>
-              </div>
+                    <span className="grid h-10 w-10 place-items-center rounded-full bg-white/85 backdrop-blur-sm">
+                      <Eye className="h-4 w-4 text-black" />
+                    </span>
+                  </span>
+                </span>
+                <span className="block px-2.5 pb-1 pt-3 text-[0.82rem] font-medium leading-snug text-label">
+                  {cert.title}
+                </span>
+              </button>
             ))}
           </div>
         </section>
       </div>
 
-      {/* Certificate Modal Viewer */}
       {selectedCertObj && (
-        <div className="fixed inset-0 z-50 bg-accent/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="glass-card rounded-2xl max-w-3xl w-full overflow-hidden shadow-[0_12px_40px_-12px_hsl(0_0%_0%/0.28)] space-y-4 p-6 relative animate-in fade-in zoom-in duration-200">
-            <button
-              onClick={() => setActiveCert(null)}
-              className="absolute top-4 right-4 p-2 rounded-full bg-label/[0.04] hover:bg-label/[0.06] text-label-secondary transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-            <div className="space-y-1">
-              <span className="text-xs font-bold text-label uppercase tracking-wider">
-                {selectedCertObj.category}
-              </span>
-              <h3 className="text-lg font-bold text-label">
-                {selectedCertObj.title}
-              </h3>
-            </div>
-
-            <div className="max-h-[60vh] overflow-auto rounded-xl border border-white/70 bg-label/[0.04] p-2">
-              <img
-                src={selectedCertObj.img}
-                alt={selectedCertObj.title}
-                className="w-full h-auto object-contain max-h-[50vh] mx-auto rounded"
-              />
-            </div>
-
-            <div className="flex items-center justify-between pt-2">
-              <p className="text-xs text-label-secondary">{selectedCertObj.desc}</p>
-              <a
-                href={selectedCertObj.downloadPath}
-                download
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 bg-accent hover:bg-accent text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors shrink-0 min-h-[44px]"
-              >
-                <Download className="w-4 h-4" /> Download File / Document
-              </a>
-            </div>
-          </div>
-        </div>
+        <Lightbox
+          items={certificatesList.map((c) => ({
+            src: c.img,
+            alt: c.title,
+            title: c.title,
+            eyebrow: c.category,
+            caption: c.desc,
+            download: c.downloadPath,
+            downloadLabel: "Download",
+          }))}
+          index={certificatesList.findIndex((c) => c.id === activeCert)}
+          onClose={() => setActiveCert(null)}
+          onIndex={(i) => setActiveCert(certificatesList[i].id)}
+        />
       )}
+
     </div>
   );
 }
