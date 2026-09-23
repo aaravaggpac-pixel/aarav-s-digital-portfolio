@@ -1,15 +1,11 @@
 import { useState } from "react";
 import { Users, ExternalLink } from "lucide-react";
-import { useScrollToHash } from "@/hooks/use-scroll-to-hash";
-import { useAutoReveal } from "@/components/Reveal";
 import { Gallery } from "@/components/Gallery";
 import { ytsPhotos } from "@/lib/galleries";
 
 type LeadTab = "yts" | "readtolead";
 
 export default function LeadershipMentoring() {
-  useAutoReveal();
-  useScrollToHash();
   const [activeTab, setActiveTab] = useState<LeadTab>("yts");
 
   return (

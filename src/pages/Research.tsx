@@ -1,13 +1,9 @@
 import { useState } from "react";
 import { BookOpen, ExternalLink, FileText, Download } from "lucide-react";
-import { useScrollToHash } from "@/hooks/use-scroll-to-hash";
-import { useAutoReveal } from "@/components/Reveal";
 
 type ResTab = "ipl" | "roof" | "biocell" | "acoustic";
 
 export default function Research() {
-  useAutoReveal();
-  useScrollToHash();
   const [activeTab, setActiveTab] = useState<ResTab>("ipl");
 
   const tabs: { id: ResTab; label: string }[] = [

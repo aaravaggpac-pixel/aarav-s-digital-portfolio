@@ -1,13 +1,9 @@
 import { useState } from "react";
 import { ExternalLink, Flame, ShieldCheck, Award, FileText } from "lucide-react";
-import { useScrollToHash } from "@/hooks/use-scroll-to-hash";
-import { useAutoReveal } from "@/components/Reveal";
 import { Gallery } from "@/components/Gallery";
 import { coolPlayPhotos, roofOfHopePhotos } from "@/lib/galleries";
 
 export default function UrbanHeatStress() {
-  useAutoReveal();
-  useScrollToHash();
   const [activeTab, setActiveTab] = useState<"roofofhope" | "coolplay">("roofofhope");
 
   return (

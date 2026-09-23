@@ -1,15 +1,11 @@
 import { useState } from "react";
 import { Trophy, ExternalLink, Heart } from "lucide-react";
-import { useScrollToHash } from "@/hooks/use-scroll-to-hash";
-import { useAutoReveal } from "@/components/Reveal";
 import { Gallery } from "@/components/Gallery";
 import { cricketPhotos } from "@/lib/galleries";
 
 type CricketTab = "national" | "club" | "stumps";
 
 export default function Cricket() {
-  useAutoReveal();
-  useScrollToHash();
   const [activeTab, setActiveTab] = useState<CricketTab>("national");
 
   return (

@@ -1,15 +1,11 @@
 import { useState } from "react";
 import { Cpu, ExternalLink, FileText, Download } from "lucide-react";
-import { useScrollToHash } from "@/hooks/use-scroll-to-hash";
-import { useAutoReveal } from "@/components/Reveal";
 import { Gallery } from "@/components/Gallery";
 import { bioCellPhotos, mtsiPhotos } from "@/lib/galleries";
 
 type TabType = "datapitch" | "mtsi" | "biocell" | "acoustic" | "plaksha" | "mynzo" | "ceew";
 
 export default function EngineeringTechnology() {
-  useAutoReveal();
-  useScrollToHash();
   const [activeTab, setActiveTab] = useState<TabType>("datapitch");
 
   const projectTabs: { id: TabType; label: string }[] = [
