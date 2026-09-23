@@ -24,7 +24,7 @@ export default function UrbanHeatStress() {
         </div>
 
         {/* Sub-tabs Selection Header */}
-        <div className="mb-8 flex max-w-md flex-wrap gap-2 rounded-xl border border-white/70 p-1.5 glass-card">
+        <div className="mb-8 flex w-fit max-w-full flex-wrap gap-2 rounded-xl border border-white/70 p-1.5 glass-card">
           <button
             onClick={() => setActiveTab("roofofhope")}
             className={`px-4 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all ${

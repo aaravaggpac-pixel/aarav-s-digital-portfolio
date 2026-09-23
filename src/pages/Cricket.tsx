@@ -30,7 +30,7 @@ export default function Cricket() {
       {/* Main Content Area */}
       <div data-reveal-root className="mx-auto max-w-6xl px-5 sm:px-8 py-10">
         {/* Sub-tabs Selection Header */}
-        <div className="mb-8 flex max-w-2xl flex-wrap gap-2 rounded-xl border border-white/70 p-1.5 glass-card">
+        <div className="mb-8 flex w-fit max-w-full flex-wrap gap-2 rounded-xl border border-white/70 p-1.5 glass-card">
           <button
             onClick={() => setActiveTab("national")}
             className={`px-4 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all ${
