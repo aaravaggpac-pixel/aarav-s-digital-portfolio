@@ -30,10 +30,10 @@ export default function Cricket() {
       {/* Main Content Area */}
       <div data-reveal-root className="mx-auto max-w-6xl px-5 sm:px-8 py-10">
         {/* Sub-tabs Selection Header */}
-        <div className="flex border-b border-white/70 mb-8 glass-card p-1.5 rounded-xl border max-w-lg">
+        <div className="mb-8 flex max-w-2xl flex-wrap gap-2 rounded-xl border border-white/70 p-1.5 glass-card">
           <button
             onClick={() => setActiveTab("national")}
-            className={`flex-1 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all ${
+            className={`px-4 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all ${
               activeTab === "national"
                 ? "bg-accent text-white "
                 : "text-label-secondary hover:text-label hover:bg-label/[0.04]"
@@ -43,7 +43,7 @@ export default function Cricket() {
           </button>
           <button
             onClick={() => setActiveTab("club")}
-            className={`flex-1 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all ${
+            className={`px-4 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all ${
               activeTab === "club"
                 ? "bg-accent text-white "
                 : "text-label-secondary hover:text-label hover:bg-label/[0.04]"
@@ -53,7 +53,7 @@ export default function Cricket() {
           </button>
           <button
             onClick={() => setActiveTab("stumps")}
-            className={`flex-1 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all ${
+            className={`px-4 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all ${
               activeTab === "stumps"
                 ? "bg-accent text-white "
                 : "text-label-secondary hover:text-label hover:bg-label/[0.04]"

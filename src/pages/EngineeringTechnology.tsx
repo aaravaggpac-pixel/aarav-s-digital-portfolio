@@ -327,7 +327,7 @@ export default function EngineeringTechnology() {
                   href="/docs/CEEW-Internship-Offer-Letter-Aarav-12Jun26.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 bg-white/15 text-white text-xs font-semibold px-4 py-2 rounded-lg hover:bg-white/15 transition-colors min-h-[44px]"
+                  className="inline-flex items-center gap-1.5 bg-accent text-white text-xs font-semibold px-4 py-2 rounded-lg hover:bg-accent-hover transition-colors min-h-[44px]"
                 >
                   <FileText className="w-3.5 h-3.5" /> View Offer Letter PDF
                 </a>

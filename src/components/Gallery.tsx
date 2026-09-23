@@ -25,6 +25,9 @@ type GalleryProps = {
   /** Match the frame to the source so `object-cover` isn't discarding half
       the photo. Portrait sets (bench shots, documents) need a tall frame. */
   aspect?: "landscape" | "portrait";
+  /** Preserve the whole source image when cropping would remove important
+      people or context. */
+  fit?: "cover" | "contain";
   className?: string;
 };
 
@@ -43,7 +46,13 @@ const ASPECT = {
  * Intrinsic width/height are set on every image so the row reserves its space
  * before the file loads and nothing shifts (Core Web Vitals: CLS).
  */
-export function Gallery({ title, images, aspect = "landscape", className }: GalleryProps) {
+export function Gallery({
+  title,
+  images,
+  aspect = "landscape",
+  fit = "cover",
+  className,
+}: GalleryProps) {
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   if (images.length === 0) return null;
@@ -67,7 +76,11 @@ export function Gallery({ title, images, aspect = "landscape", className }: Gall
                   height={img.h}
                   loading="lazy"
                   decoding="async"
-                  className={cn("w-full rounded-[0.8rem] object-cover", ASPECT[aspect])}
+                  className={cn(
+                    "w-full rounded-[0.8rem]",
+                    ASPECT[aspect],
+                    fit === "contain" ? "bg-label/[0.03] object-contain" : "object-cover",
+                  )}
                 />
                 {img.video && (
                   <span

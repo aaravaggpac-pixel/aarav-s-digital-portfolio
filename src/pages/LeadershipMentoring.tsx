@@ -26,10 +26,10 @@ export default function LeadershipMentoring() {
         </div>
 
         {/* Sub-tabs Selection Header */}
-        <div className="flex border-b border-white/70 mb-8 glass-card p-1.5 rounded-xl border max-w-md">
+        <div className="mb-8 flex max-w-md flex-wrap gap-2 rounded-xl border border-white/70 p-1.5 glass-card">
           <button
             onClick={() => setActiveTab("yts")}
-            className={`flex-1 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all ${
+            className={`px-4 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all ${
               activeTab === "yts"
                 ? "bg-accent text-white "
                 : "text-label-secondary hover:text-label hover:bg-label/[0.04]"
@@ -39,7 +39,7 @@ export default function LeadershipMentoring() {
           </button>
           <button
             onClick={() => setActiveTab("readtolead")}
-            className={`flex-1 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all ${
+            className={`px-4 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all ${
               activeTab === "readtolead"
                 ? "bg-accent text-white "
                 : "text-label-secondary hover:text-label hover:bg-label/[0.04]"

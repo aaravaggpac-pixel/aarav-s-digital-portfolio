@@ -276,16 +276,14 @@ export default function AwardsRecognition() {
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
             {certificatesList.map((cert) => (
-              <article
+              <button
                 key={cert.id}
-                className="glass-card glass-card-link group flex flex-col overflow-hidden rounded-tile-lg p-1.5 transition-transform duration-300 hover:-translate-y-0.5"
+                type="button"
+                onClick={() => setActiveCert(cert.id)}
+                aria-label={`Open: ${cert.title}`}
+                className="glass-card glass-card-link group flex flex-col overflow-hidden rounded-tile-lg p-1.5 text-left transition-transform duration-300 hover:-translate-y-0.5"
               >
-                <button
-                  type="button"
-                  onClick={() => setActiveCert(cert.id)}
-                  aria-label={`Open: ${cert.title}`}
-                  className="relative block overflow-hidden rounded-[0.8rem] bg-label/[0.04] text-left"
-                >
+                <span className="relative block overflow-hidden rounded-[0.8rem] bg-label/[0.04]">
                   <img
                     src={cert.img}
                     alt={cert.title}
@@ -301,29 +299,11 @@ export default function AwardsRecognition() {
                       <Eye className="h-4 w-4 text-black" />
                     </span>
                   </span>
-                </button>
+                </span>
                 <span className="block px-2.5 pb-1 pt-3 text-[0.82rem] font-medium leading-snug text-label">
                   {cert.title}
                 </span>
-                <div className="mt-auto grid grid-cols-2 gap-2 border-t border-white/60 px-2.5 py-2.5">
-                  <button
-                    type="button"
-                    onClick={() => setActiveCert(cert.id)}
-                    className="inline-flex min-h-[44px] items-center justify-center gap-1.5 rounded-lg bg-label/[0.05] px-3 text-[0.76rem] font-medium text-label transition-colors hover:bg-label/[0.1]"
-                  >
-                    <Eye className="h-3.5 w-3.5" aria-hidden />
-                    Open
-                  </button>
-                  <a
-                    href={cert.downloadPath}
-                    download
-                    className="inline-flex min-h-[44px] items-center justify-center gap-1.5 rounded-lg bg-accent px-3 text-[0.76rem] font-medium text-white transition-colors hover:bg-accent-hover"
-                  >
-                    <Download className="h-3.5 w-3.5" aria-hidden />
-                    Download
-                  </a>
-                </div>
-              </article>
+              </button>
             ))}
           </div>
         </section>

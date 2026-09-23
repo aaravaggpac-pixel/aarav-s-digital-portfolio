@@ -24,10 +24,10 @@ export default function UrbanHeatStress() {
         </div>
 
         {/* Sub-tabs Selection Header */}
-        <div className="flex border-b border-white/70 mb-8 glass-card p-1.5 rounded-xl border max-w-md">
+        <div className="mb-8 flex max-w-md flex-wrap gap-2 rounded-xl border border-white/70 p-1.5 glass-card">
           <button
             onClick={() => setActiveTab("roofofhope")}
-            className={`flex-1 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all ${
+            className={`px-4 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all ${
               activeTab === "roofofhope"
                 ? "bg-accent text-white "
                 : "text-label-secondary hover:text-label hover:bg-label/[0.04]"
@@ -37,7 +37,7 @@ export default function UrbanHeatStress() {
           </button>
           <button
             onClick={() => setActiveTab("coolplay")}
-            className={`flex-1 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all ${
+            className={`px-4 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all ${
               activeTab === "coolplay"
                 ? "bg-accent text-white "
                 : "text-label-secondary hover:text-label hover:bg-label/[0.04]"
@@ -293,7 +293,12 @@ export default function UrbanHeatStress() {
             {/* Photos of athletes */}
             <div className="space-y-4">
               <h3 className="text-sm font-bold text-label">Young Athletes Wearing Reusable Cooling Jackets</h3>
-              <Gallery title="Cool Play in action" images={coolPlayPhotos} />
+              <Gallery
+                title="Cool Play in action"
+                images={coolPlayPhotos}
+                aspect="portrait"
+                fit="contain"
+              />
               <p className="text-xs text-label-secondary">
                 Photos from the Cool Play / Fuel A Dream campaign — athletes training under extreme temperatures with cooling jackets.
               </p>
