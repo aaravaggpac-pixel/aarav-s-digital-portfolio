@@ -1,10 +1,6 @@
 import { FileText, Download, Linkedin, Mail, GraduationCap, Briefcase, Award, ExternalLink, Code2 } from "lucide-react";
-import { useScrollToHash } from "@/hooks/use-scroll-to-hash";
-import { useAutoReveal } from "@/components/Reveal";
 
 export default function Resume() {
-  useAutoReveal();
-  useScrollToHash();
 
   const achievements = [
     { label: "SAT Score", val: "1570 / 1600" },

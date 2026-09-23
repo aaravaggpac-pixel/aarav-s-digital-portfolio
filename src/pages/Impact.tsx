@@ -1,8 +1,6 @@
 import { ExternalLink } from "lucide-react";
-import { useScrollToHash } from "@/hooks/use-scroll-to-hash";
 
 export default function Impact() {
-  useScrollToHash();
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
       <h1 className="text-2xl sm:text-3xl font-bold mb-2 text-foreground">Urban Heat Stress Initiative & Research</h1>

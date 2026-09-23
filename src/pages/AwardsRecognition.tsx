@@ -1,12 +1,8 @@
 import { useState } from "react";
 import { Lightbox } from "@/components/Lightbox";
-import { Globe, Medal, ExternalLink, Download, Eye, X, Award } from "lucide-react";
-import { useScrollToHash } from "@/hooks/use-scroll-to-hash";
-import { useAutoReveal } from "@/components/Reveal";
+import { Globe, Medal, ExternalLink, Download, Eye, Award } from "lucide-react";
 
 export default function AwardsRecognition() {
-  useAutoReveal();
-  useScrollToHash();
   const [activeCert, setActiveCert] = useState<string | null>(null);
 
   const internationalHonors = [

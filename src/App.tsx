@@ -17,8 +17,14 @@ import Cricket from "./pages/Cricket";
 import AwardsRecognition from "./pages/AwardsRecognition";
 import Resume from "./pages/Resume";
 import NotFound from "./pages/NotFound";
+import { useScrollToHash } from "./hooks/use-scroll-to-hash";
 
 const queryClient = new QueryClient();
+
+function NavigationEffects() {
+  useScrollToHash();
+  return null;
+}
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -26,6 +32,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <NavigationEffects />
         <div className="min-h-screen flex flex-col font-sans bg-background text-label">
           <Wash />
           <Navbar />
