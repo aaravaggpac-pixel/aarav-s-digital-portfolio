@@ -33,7 +33,7 @@ export default function Engineering() {
           </p>
           <h3 className="font-bold text-foreground text-sm mb-2">Related Activities & Roles</h3>
           <ul className="list-disc list-inside text-muted-foreground space-y-1 text-sm mb-3">
-            <li><strong>Founder, Roof of Hope (2025–Present):</strong> Designed and deployed cool-roof solutions across 100 homes in Delhi; scaling to 4,000 with CSR partnerships. Invited to present at IC2UHI 2026.</li>
+            <li><strong>Founder, Roof of Hope (2025–Present):</strong> Designed and deployed cool-roof solutions across 100 homes in Delhi; scaling to 1,000 with CSR partnerships. Invited to present at IC2UHI 2026.</li>
             <li><strong>Developer, DataPitch (2025):</strong> Built an end-to-end ML pipeline predicting IPL outcomes through player archetypes using PCA, K-means clustering, and OLS regression. Paper under review at NHSJS.</li>
             <li><strong>Researcher, Sustainable Energy Systems:</strong> Investigated organic electrolytes (aloe vera gel, orange peel extract) for low-cost bio-electrochemical cells targeting IoT agricultural sensors.</li>
             <li><strong>Young Tech Scholars, Plaksha University (2023):</strong> Designed and built a hand-controlled teleoperation robot using ESP32, gyroscope sensors, and multiple wireless protocols (Wi-Fi/MQTT, Bluetooth, RF).</li>

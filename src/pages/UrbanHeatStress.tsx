@@ -18,7 +18,7 @@ export default function UrbanHeatStress() {
             Urban Heat Stress Initiative & Research
           </h1>
           <p className="text-label-secondary text-sm sm:text-base max-w-3xl leading-relaxed">
-            Addressing microclimate heat stress in low-income settlements and youth athletics through scalable cool-roof materials, empirical research, and community cooling interventions.
+            Addressing the Urban Heat Island (UHI) effect in low-income settlements in Delhi through scalable cool-roof materials, empirical research, and scaling through CSR funding.
           </p>
           <div className="w-24 h-1.5 bg-accent rounded" />
         </div>
@@ -78,11 +78,53 @@ export default function UrbanHeatStress() {
 
             <div className="space-y-4 text-label-secondary text-sm leading-relaxed">
               <p>
-                Founded <strong>Roof of Hope</strong> in 2024 to counter urban heat stress in low-income communities. Collaborated with <strong>Mahila Housing Trust</strong>, <strong>Indorama Ventures Center for Clean Energy</strong>, and <strong>Plaksha University</strong> to pilot and test solutions for building thermal resilience in Delhi.
+                Delhi&rsquo;s Urban Heat Island (UHI) effect disproportionately impacts low-income families living in homes with metal or cement roofs. Indoor temperatures in these houses regularly exceed 40&nbsp;°C during the summer months, creating sustained heat exposure and stress. With no access to air conditioning, residents rely on fans and mechanical ventilation, leaving them acutely vulnerable to extreme heat.
               </p>
-              <p>
-                Installed cool roofs across <strong>100 low-income homes</strong> in Bakkarwala Resettlement Colony, Delhi, to provide relief during extreme summer months and collect empirical sensor data for policy planning on urban heat stress relief.
+            </div>
+
+            <div className="space-y-4 border-t border-white/60 pt-6">
+              <h3 className="text-sm font-bold text-label">The Solution and Field Implementation</h3>
+              <p className="text-label-secondary text-sm leading-relaxed">
+                I founded <strong>Roof of Hope</strong> to design and implement a scalable, evidence-driven cool-roof solution tailored to informal and resettlement settlements.
               </p>
+              <ul className="space-y-3 text-label-secondary text-sm leading-relaxed">
+                <li className="flex gap-3">
+                  <span aria-hidden className="mt-2 h-1 w-1 shrink-0 rounded-full bg-label/40" />
+                  <span>
+                    We used high-reflectivity, UV-resistant, white tarpaulin sheets as cool roofs. The material is lightweight, adaptable to different roof sizes (15&ndash;25&nbsp;m²), easy to install, and durable.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span aria-hidden className="mt-2 h-1 w-1 shrink-0 rounded-full bg-label/40" />
+                  <span>
+                    I led end-to-end deployment across <strong>100 households</strong> in Bakkarwala Resettlement Colony, West Delhi, managing material sourcing, logistics, community engagement and volunteer coordination, data collection, and analyses.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span aria-hidden className="mt-2 h-1 w-1 shrink-0 rounded-full bg-label/40" />
+                  <span>
+                    I partnered with <strong>Indorama Ventures Center for Clean Energy</strong> to ensure scientific rigor and data measurements for evidence and research. We installed 2 temperature sensors under ceilings, and on indoor walls in selected homes. We also installed a centrally located weather station to record ambient temperature and weather conditions to enable normalized pre- and post-intervention comparisons.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span aria-hidden className="mt-2 h-1 w-1 shrink-0 rounded-full bg-label/40" />
+                  <span>
+                    Additionally, we conducted structured household surveys and qualitative interviews to assess the impact on thermal comfort, sleep quality, daily functioning, and self-reported health.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span aria-hidden className="mt-2 h-1 w-1 shrink-0 rounded-full bg-label/40" />
+                  <span>
+                    Over <strong>95% of households</strong> reported improved comfort and well-being, with a strong willingness to partially pay.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span aria-hidden className="mt-2 h-1 w-1 shrink-0 rounded-full bg-label/40" />
+                  <span>
+                    With proven performance and community acceptance, secured <strong>$40,000 funding</strong> from corporate CSR sponsors to scale Roof of Hope to <strong>1,000 homes</strong> as a replicable model for climate-resilient urban adaptation.
+                  </span>
+                </li>
+              </ul>
             </div>
 
             {/* Results Grid */}

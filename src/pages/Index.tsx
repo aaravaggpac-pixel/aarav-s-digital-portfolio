@@ -44,7 +44,7 @@ export default function Index() {
     {
       title: "Urban Heat Stress",
       subtitle: "Roof of Hope & Cool Play",
-      desc: "Founded Roof of Hope & Cool Play to counter urban heat stress; 100 cool roofs in Delhi scaling to 4,000; 60+ cooling jackets for youth athletes.",
+      desc: "Founded Roof of Hope & Cool Play to counter urban heat stress; 100 cool roofs in Delhi scaling to 1,000; 60+ cooling jackets for youth athletes.",
       path: "/urban-heat-stress",
       badge: "Climate Impact",
       icon: Flame,
@@ -75,7 +75,7 @@ export default function Index() {
       path: "/leadership-mentoring",
       badge: "Community & TA",
       icon: Users,
-      wide: true,
+      wide: false,
     },
     {
       title: "Cricket",
@@ -84,7 +84,7 @@ export default function Index() {
       path: "/cricket",
       badge: "National Athlete",
       icon: Trophy,
-      wide: true,
+      wide: false,
     },
     {
       title: "Awards & Recognition",
@@ -130,7 +130,7 @@ export default function Index() {
             </p>
 
             <p className="mt-6 max-w-[60ch] text-[1rem] leading-[1.6] text-label-secondary text-pretty">
-              I am Aarav Aggarwal, a high school student at Singapore American School driven by a passion for leveraging technology, engineering research, and community action to solve complex real-world challenges. From founding Roof of Hope (scaling cool-roof interventions across 4,000 homes in India) to conducting machine learning internships and representing Singapore in international cricket, I strive for excellence across research, sports, and societal impact.
+              I am Aarav Aggarwal, a high school student at Singapore American School driven by a passion for leveraging technology, engineering research, and community action to solve complex real-world challenges. From founding Roof of Hope (scaling cool-roof interventions across 1,000 homes in India) to conducting machine learning internships and representing Singapore in international cricket, I strive for excellence across research, sports, and societal impact.
             </p>
 
             {/* One filled action, two glass ones — style, not size, separates
@@ -228,22 +228,22 @@ export default function Index() {
 
           <div className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {/* Feature tile — the one solid black surface anchors the grid */}
-            <Reveal className="lg:col-span-2">
+            <Reveal>
               <Link
                 to={feature.path}
-                className="group flex h-full flex-col justify-between rounded-tile-lg bg-inverted p-8 text-inverted-label shadow-[0_3px_14px_-6px_hsl(0_0%_0%/0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-10px_hsl(0_0%_0%/0.3)] sm:p-10"
+                className="group flex h-full flex-col justify-between rounded-tile-lg bg-inverted p-7 text-inverted-label shadow-[0_3px_14px_-6px_hsl(0_0%_0%/0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-10px_hsl(0_0%_0%/0.3)]"
               >
               <div>
                 <div className="flex items-start justify-between gap-6">
-                  <FeatureIcon className="h-7 w-7 opacity-90" strokeWidth={1.5} aria-hidden />
+                  <FeatureIcon className="h-6 w-6 opacity-90" strokeWidth={1.5} aria-hidden />
                   <span className="text-[0.82rem] opacity-70">{feature.badge}</span>
                 </div>
 
                 <h3 className="mt-7 text-[clamp(1.8rem,3.2vw,2.4rem)] font-semibold leading-[1.08] tracking-[-0.03em] text-inverted-label">
                   {feature.title}
                 </h3>
-                <p className="mt-2 text-[1rem] opacity-85">{feature.subtitle}</p>
-                <p className="mt-4 max-w-[52ch] text-[0.94rem] leading-[1.6] opacity-70 text-pretty">
+                <p className="mt-1.5 text-[0.94rem] opacity-85">{feature.subtitle}</p>
+                <p className="mt-4 text-[0.94rem] leading-[1.6] opacity-70 text-pretty">
                   {feature.desc}
                 </p>
               </div>
@@ -264,7 +264,6 @@ export default function Index() {
               return (
                 <Reveal
                   key={card.title}
-                  className={cn(card.wide && "lg:col-span-2")}
                   delay={60 * (i + 1)}
                 >
                   <Link
@@ -283,7 +282,7 @@ export default function Index() {
                     <h3
                       className={cn(
                         "mt-7 font-semibold leading-[1.15] tracking-[-0.025em] text-label",
-                        card.wide ? "text-[1.6rem]" : "text-[1.29rem]",
+                        "text-[1.29rem]",
                       )}
                     >
                       {card.title}
@@ -292,7 +291,6 @@ export default function Index() {
                     <p
                       className={cn(
                         "mt-4 text-[0.94rem] leading-[1.6] text-label-secondary text-pretty",
-                        card.wide && "max-w-[54ch]",
                       )}
                     >
                       {card.desc}

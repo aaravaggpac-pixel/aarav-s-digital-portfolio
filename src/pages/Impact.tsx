@@ -32,7 +32,7 @@ export default function Impact() {
           </ul>
         </div>
         <p className="text-muted-foreground leading-relaxed text-sm sm:text-base mb-6">
-          Now scaling to <strong>4,000 homes</strong> with corporate CSR support. Invited to present at the 7th International Conference on Countermeasures to Urban Heat Islands (IC2UHI), 2026.
+          Now scaling to <strong>1,000 homes</strong> with corporate CSR support. Invited to present at the 7th International Conference on Countermeasures to Urban Heat Islands (IC2UHI), 2026.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">

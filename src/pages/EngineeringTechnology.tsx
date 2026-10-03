@@ -189,6 +189,22 @@ export default function EngineeringTechnology() {
               <p>Design Application: 497539–001</p>
               <p>Design Application: 497540-001</p>
             </div>
+
+            <div className="glass-card flex flex-wrap items-center justify-between gap-4 rounded-tile-lg p-4">
+              <div>
+                <p className="text-[0.82rem] font-semibold text-label">Published Paper</p>
+                <p className="text-[0.78rem] text-label-secondary">oxfordjss.org &middot; Oxford Journal of Scientific Studies, Sept 2026</p>
+              </div>
+              <a
+                href="https://www.oxfordjss.org/sep-2026-vol-11-issue-5/comparative-analysis-of-aloe-vera-and-orange-peel-extracts-as-sustainable-electrolytes-in-a-copper%E2%80%93zinc-bio-electrochemical-cell"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pill inline-flex min-h-[44px] shrink-0 items-center gap-2 bg-accent px-5 text-[0.82rem] font-medium text-white transition-colors duration-200 hover:bg-accent-hover"
+              >
+                Read the paper
+                <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+              </a>
+            </div>
             <div className="border-t border-white/60 pt-7">
               <Gallery title="Prototype gallery" images={bioCellPhotos} aspect="portrait" />
             </div>

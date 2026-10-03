@@ -74,6 +74,13 @@ export default function Research() {
               Published at <strong>The National High School Journal of Science (NHSJS)</strong>. Analyzed IPL player performance using K-Means clustering, Principal Component Analysis (PCA), and Linear Regression models to evaluate role composition and squad balance in T20 cricket.
             </p>
 
+            <div className="space-y-2.5 border-t border-white/60 pt-5">
+              <h3 className="text-sm font-bold text-label">Abstract</h3>
+              <p className="text-label-secondary text-sm leading-relaxed text-pretty">
+                The IPL&rsquo;s rapid evolution into a faster and more competitive format has made traditional batting metrics insufficient for informed team selection. As batting styles become varied, averages and strike rates no longer capture the full range of player roles. This study examines how a team&rsquo;s batting-role composition influences win rates in the Indian Premier League (IPL). Machine learning algorithms were applied to a ball-by-ball dataset of 240,000 deliveries across sixteen seasons (2008&ndash;2023). Nineteen batting features including scoring tempo, consistency, boundary frequency, dot-ball percentage were analysed to identify underlying performance patterns. Principal Component Analysis (PCA) and k-means clustering revealed four batting archetypes: low baseline contributors, stable accumulators, explosive accelerators, and solid contributors. Season-level team success was evaluated by projecting meaningful player-season records (&ge;50 balls faced) into the PCA&ndash;cluster space to quantify each team&rsquo;s archetype composition. This was then regressed against win percentage using Ordinary Least Squares (OLS). Although explanatory power was modest (R² = 0.143 in-sample, F-statistic of 4.044, p = 0.00447), C1 and C2 players showed positive associations with win percentage (β = 3.06; β = 0.99), while C0 players were negatively associated. Granular analysis of the top predicted team compositions demonstrated a consistent preference for lineups balancing the stability of Cluster 1 players with the explosiveness of Cluster 2 players, supported by adaptable Cluster 3 contributors. This balance emerged as the central insight in effective team composition. Future analyses may integrate additional bowling, fielding, and match-condition variables to achieve more refined evaluations of team performance.
+              </p>
+            </div>
+
             <div className="glass-card flex flex-wrap items-center justify-between gap-4 rounded-tile-lg p-4">
               <div>
                 <p className="text-[0.82rem] font-semibold text-label">Direct Link</p>
@@ -126,6 +133,22 @@ export default function Research() {
               <a href="https://www.mahilahousingtrust.org/" target="_blank" rel="noopener noreferrer" className="text-label underline underline-offset-[3px] decoration-label/25 hover:decoration-label">Mahila Housing Trust</a>, and{" "}
               <a href="https://www.nagarro.com/en/industries/nonprofit-and-education" target="_blank" rel="noopener noreferrer" className="text-label underline underline-offset-[3px] decoration-label/25 hover:decoration-label">Nagarro</a>.
             </p>
+
+            <div className="space-y-2.5 border-t border-white/60 pt-5">
+              <h3 className="text-sm font-bold text-label">Abstract</h3>
+              <p className="text-label-secondary text-sm leading-relaxed text-pretty">
+                India&rsquo;s rapid urbanization, coupled with intensifying heatwaves, poses critical risks to human health, particularly in low-income informal settlements. These communities face compounded vulnerabilities from climate change and the Urban Heat Island (UHI) effect, resulting in heightened indoor thermal stress. Cool roofs offer a cost-effective and low-carbon solution to reduce heat exposure. This study assesses the thermal and social impacts of cool roof installations in the Bakkarwala Resettlement Colony, a marginalized community in West Delhi.
+              </p>
+              <p className="text-label-secondary text-sm leading-relaxed text-pretty">
+                The study site comprised low-income households where families of about five live in 15&ndash;25&nbsp;m² single-room homes with metal or cement roofs. With indoor wall temperatures frequently exceeding 38&nbsp;°C, average monthly incomes of ₹10,000&ndash;12,000 (USD 115&ndash;130) and no access to air conditioning, residents rely on fans and ventilation, making them highly vulnerable to extreme heat and ideal for assessing low-cost cooling solutions such as cool roofs. A total of 100 homes were equipped with high-reflectivity, UV-resistant, waterproof white tarpaulin sheets in two phases (May and June 2025). Sensors placed over and under ceiling, and on indoor walls, measured thermal readings in 4 selected homes. Data was collected for 10 days pre and post-intervention along with local weather data.
+              </p>
+              <p className="text-label-secondary text-sm leading-relaxed text-pretty">
+                Findings reveal a significant reduction of &asymp;&nbsp;20&nbsp;°C in over-deck surface temperatures (measured using IR camera), 4&ndash;11&nbsp;°C in under-deck ceiling temperatures, and 1&ndash;3&nbsp;°C in indoor wall temperatures. Structured surveys and qualitative interviews (98% response rate) confirmed improvements in thermal comfort, sleep quality, daily activities, and self-reported health. Over 95% of surveyed households reported positive outcomes, with respondents willing to partially pay for the roof installation.
+              </p>
+              <p className="text-label-secondary text-sm leading-relaxed text-pretty">
+                The results underscore the potential of low-cost cool roofs as an effective climate adaptation strategy for vulnerable populations. The roofs were found to be durable under local weather conditions, with most installation and maintenance handled by community and residents using basic tools. We advocate for integration of cool roofs into climate-resilient urban planning, advancing SDGs 13, 11 and 9.4.
+              </p>
+            </div>
           </section>
         )}
 
@@ -151,6 +174,35 @@ export default function Research() {
               <p>Design Application: 497516-001</p>
               <p>Design Application: 497539–001</p>
               <p>Design Application: 497540-001</p>
+            </div>
+
+            <div className="space-y-2.5 border-t border-white/60 pt-5">
+              <h3 className="text-sm font-bold text-label">Abstract</h3>
+              <p className="text-label-secondary text-sm leading-relaxed text-pretty">
+                The need for sustainable energy storage has prompted the study of bio-derived electrolytes as a substitute for traditional battery systems. This paper compares aloe vera and orange peel extracts as natural electrolytes in a 3-compartment copper-zinc electrochemical cell. Voltage output and stability of the electrolytes were analyzed and compared across five dilution ratios (1:1&ndash;1:5) under constant conditions. Plant extracts were prepared by blending, dilution with distilled water, and filtration to obtain aqueous electrolytes. Voltage output was recorded on a digital multimeter over seven days to check the stability of the system.
+              </p>
+              <p className="text-label-secondary text-sm leading-relaxed text-pretty">
+                The two electrolytes yielded measurable and sustained voltages, which suggested their potential use as natural electrolytes in electrochemical systems. The voltage output was not linearly related to the dilution. The greatest mean voltage was recorded with aloe vera at the 1:1 ratio (1.393&nbsp;V) and at the ratios of 1:2, 1:3, and 1:5 (1.280&ndash;1.294&nbsp;V). Orange peel achieved its best mean voltage with the most dilute 1:5 ratio (1.314&nbsp;V) and similar results at 1:1&ndash;1:3 (1.166&ndash;1.243&nbsp;V). The performance of both electrolytes was found to be lower at a 1:4 ratio.
+              </p>
+              <p className="text-label-secondary text-sm leading-relaxed text-pretty">
+                The results show that the performance of the electrolytes depends on both concentration and properties, including ionic conductivity, viscosity, pH, and interaction with the electrodes. The results support the potential of plant-based electrolytes in Cu-Zn systems and emphasize the need to optimize dilution and composition to improve electrochemical performance.
+              </p>
+            </div>
+
+            <div className="glass-card flex flex-wrap items-center justify-between gap-4 rounded-tile-lg p-4">
+              <div>
+                <p className="text-[0.82rem] font-semibold text-label">Published Paper</p>
+                <p className="text-[0.78rem] text-label-secondary">oxfordjss.org &middot; Oxford Journal of Scientific Studies, Sept 2026</p>
+              </div>
+              <a
+                href="https://www.oxfordjss.org/sep-2026-vol-11-issue-5/comparative-analysis-of-aloe-vera-and-orange-peel-extracts-as-sustainable-electrolytes-in-a-copper%E2%80%93zinc-bio-electrochemical-cell"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pill inline-flex min-h-[44px] shrink-0 items-center gap-2 bg-accent px-5 text-[0.82rem] font-medium text-white transition-colors duration-200 hover:bg-accent-hover"
+              >
+                Read the paper
+                <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+              </a>
             </div>
           </section>
         )}
