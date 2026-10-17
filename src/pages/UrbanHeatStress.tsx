@@ -97,7 +97,7 @@ export default function UrbanHeatStress() {
                 <li className="flex gap-3">
                   <span aria-hidden className="mt-2 h-1 w-1 shrink-0 rounded-full bg-label/40" />
                   <span>
-                    I led end-to-end deployment across <strong>100 households</strong> in Bakkarwala Resettlement Colony, West Delhi, managing material sourcing, logistics, community engagement and volunteer coordination, data collection, and analyses.
+                    I led end-to-end deployment in Bakkarwala Resettlement Colony, West Delhi, managing material sourcing, logistics, community engagement and volunteer coordination, data collection, and analyses.
                   </span>
                 </li>
                 <li className="flex gap-3">

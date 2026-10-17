@@ -34,17 +34,11 @@ function AppIcon({ className }: { className?: string }) {
 export default function Index() {
   const roles = ["Student Researcher", "Engineer", "Climate Innovator"];
 
-  const credentials = [
-    "SAT: 1570/1600",
-    "AP Scholar (CS-A: 5, Macro: 5, Micro: 5)",
-    "GPA: 4.43",
-  ];
-
   const quickNavCards = [
     {
       title: "Urban Heat Stress",
       subtitle: "Roof of Hope & Cool Play",
-      desc: "Founded Roof of Hope & Cool Play to counter urban heat stress; 100 cool roofs in Delhi scaling to 1,000; 60+ cooling jackets for youth athletes.",
+      desc: "Founded Roof of Hope & Cool Play to counter urban heat stress; cool roofs scaling to 1,000+ homes in Delhi; 60+ cooling jackets for youth athletes.",
       path: "/urban-heat-stress",
       badge: "Climate Impact",
       icon: Flame,
@@ -130,7 +124,7 @@ export default function Index() {
             </p>
 
             <p className="mt-6 max-w-[60ch] text-[1rem] leading-[1.6] text-label-secondary text-pretty">
-              I am Aarav Aggarwal, a high school student at Singapore American School driven by a passion for leveraging technology, engineering research, and community action to solve complex real-world challenges. From founding Roof of Hope (scaling cool-roof interventions across 1,000 homes in India) to conducting machine learning internships and representing Singapore in international cricket, I strive for excellence across research, sports, and societal impact.
+              I am Aarav Aggarwal, a high school student at Singapore American School driven by a passion for leveraging technology, engineering research, and community action to solve complex real-world challenges. From founding Roof of Hope (scaling cool-roof interventions across 1,000+ homes in India) to conducting machine learning internships and representing Singapore in international cricket, I strive for excellence across research, sports, and societal impact.
             </p>
 
             {/* One filled action, two glass ones — style, not size, separates
@@ -169,14 +163,6 @@ export default function Index() {
               </a>
             </div>
 
-            {/* Credentials, grouped and separated by a hairline (layout.md) */}
-            <dl className="mt-10 flex flex-wrap gap-x-7 gap-y-4 border-t border-separator pt-6">
-              {credentials.map((item) => (
-                <dd key={item} className="text-[0.88rem] leading-snug text-label-secondary">
-                  {item}
-                </dd>
-              ))}
-            </dl>
           </Reveal>
 
           {/* Identity card — the App Store product header, applied to a person */}
@@ -201,7 +187,7 @@ export default function Index() {
                   <p className="truncate text-[1.12rem] font-semibold leading-tight tracking-[-0.02em] text-label">
                     Aarav Aggarwal
                   </p>
-                  <p className="mt-0.5 text-[0.88rem] text-label-secondary">SAS High School</p>
+                  <p className="mt-0.5 text-[0.88rem] text-label-secondary">Singapore American School</p>
                 </div>
               </div>
 

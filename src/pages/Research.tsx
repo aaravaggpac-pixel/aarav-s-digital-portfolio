@@ -128,7 +128,7 @@ export default function Research() {
               , Nanjing, China · September 22–25, 2026. Invited to present findings.
             </p>
             <p className="text-label-secondary text-sm leading-relaxed">
-              Evaluating the thermal reductions (~20°C surface, 4-11°C ceiling) and social impacts of cool roof installations across 100 low-income households in Delhi, in collaboration with partners including{" "}
+              Evaluating the thermal reductions (~20°C surface, 4-11°C ceiling) and social impacts of cool roof installations in low-income households in Delhi, in collaboration with partners including{" "}
               <a href="https://plaksha.edu.in/center-for-clean-energy" target="_blank" rel="noopener noreferrer" className="text-label underline underline-offset-[3px] decoration-label/25 hover:decoration-label">Indorama Ventures Center for Clean Energy</a>,{" "}
               <a href="https://www.mahilahousingtrust.org/" target="_blank" rel="noopener noreferrer" className="text-label underline underline-offset-[3px] decoration-label/25 hover:decoration-label">Mahila Housing Trust</a>, and{" "}
               <a href="https://www.nagarro.com/en/industries/nonprofit-and-education" target="_blank" rel="noopener noreferrer" className="text-label underline underline-offset-[3px] decoration-label/25 hover:decoration-label">Nagarro</a>.

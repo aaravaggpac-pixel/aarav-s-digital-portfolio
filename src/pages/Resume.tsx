@@ -180,7 +180,7 @@ export default function Resume() {
                   <span>Roof of Hope | Founder, India</span>
                   <span className="text-label font-semibold">Dec 2024 – Present</span>
                 </div>
-                <p className="text-xs text-label-secondary">Collaborated with Mahila Housing Trust, Indorama Ventures Center for Clean Energy, and Plaksha University. Installed cool roofs in 100 homes in Delhi, achieving ~20°C roof surface, 4-11°C ceiling, and 1-3°C wall temp reductions. 95% thermal comfort improvement reported.</p>
+                <p className="text-xs text-label-secondary">Collaborated with Mahila Housing Trust, Indorama Ventures Center for Clean Energy, and Plaksha University. Deployed cool roofs in Delhi, scaling to 1,000+ homes, achieving ~20°C roof surface, 4-11°C ceiling, and 1-3°C wall temp reductions. 95% thermal comfort improvement reported.</p>
               </div>
 
               <div className="p-4 rounded-xl bg-label/[0.03] border border-white/70 space-y-1">
