@@ -25,7 +25,7 @@ const navItems = [
 const PRIMARY = navItems.slice(0, 4);
 const OVERFLOW = navItems.slice(4);
 
-const itemClass = "whitespace-nowrap py-2 text-[0.76rem] transition-opacity duration-200 hover:opacity-70";
+const itemClass = "whitespace-nowrap py-2 text-[0.84rem] transition-opacity duration-200 hover:opacity-70";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -57,20 +57,20 @@ export default function Navbar() {
         )}
       >
         <div className="px-5 sm:px-6">
-          <div className="flex h-14 items-center justify-between gap-6">
+          <div className="flex h-[4.25rem] items-center justify-between gap-6">
           {/* Identity */}
           <Link
             to="/"
-            className="group -my-2 flex min-h-[44px] shrink-0 items-center gap-2.5 py-2"
+            className="group -my-2 mr-2 flex min-h-[44px] shrink-0 items-center gap-3 py-2"
             aria-label="Aarav Aggarwal — Home"
           >
             <span
-              className="app-icon grid h-[26px] w-[26px] shrink-0 place-items-center bg-gradient-to-b from-[#2E2E30] to-[#000000] text-[0.62rem] font-semibold tracking-[-0.03em] text-white shadow-[inset_0_1px_0_0_rgb(255_255_255/0.28)]"
+              className="app-icon grid h-[32px] w-[32px] shrink-0 place-items-center bg-gradient-to-b from-[#2E2E30] to-[#000000] text-[0.72rem] font-semibold tracking-[-0.03em] text-white shadow-[inset_0_1px_0_0_rgb(255_255_255/0.28)]"
               aria-hidden
             >
               AA
             </span>
-            <span className="whitespace-nowrap text-[0.88rem] font-semibold tracking-[-0.01em] text-label transition-opacity duration-200 group-hover:opacity-70">
+            <span className="whitespace-nowrap text-[1.18rem] font-semibold tracking-[-0.025em] text-label transition-opacity duration-200 group-hover:opacity-70">
               Aarav Aggarwal
             </span>
           </Link>

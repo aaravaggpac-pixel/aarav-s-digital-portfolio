@@ -215,12 +215,27 @@ export default function Research() {
                 Acoustic Metamaterials Study
               </span>
               <h2 className="text-xl sm:text-2xl font-bold text-label">
-                Acoustic Metamaterials Noise-Barrier Modeling
+                Impedance Contrast and Layer Geometry Control the Acoustic Bandgap of One-Dimensional Metamaterials for Urban Noise Reduction
               </h2>
             </div>
             <p className="text-label-secondary text-sm leading-relaxed">
               Mentored by Dr. Nishchal Dwivedi, IIT Bombay Postdoctoral Fellow. Modeled 1,020 noise-barrier configurations — concrete-air gap stack outperformed an equal-weight solid wall by 4.3 dB in blocking urban traffic noise.
             </p>
+
+            <div className="space-y-3 border-t border-white/60 pt-5">
+              <p className="text-label-secondary text-sm leading-relaxed text-pretty">
+                <strong className="text-label">Background and Objective.</strong> Road traffic noise sits mostly at a low frequency band of 100 and 1000 hertz, which makes it hard to block. Standard barriers mostly rely on mass based sound insulation, which makes them heavy and bulky. This study asked two questions. How do material contrast and layer geometry set the acoustic bandgap of a one-dimensional periodic metamaterial? Which material pairing blocks the urban noise band best?
+              </p>
+              <p className="text-label-secondary text-sm leading-relaxed text-pretty">
+                <strong className="text-label">Methods.</strong> A transfer matrix model of a one-dimensional periodic structure consisting a stack of alternating dense and soft layers was written in Python. The model was checked against the analytic mass law, against Bragg reflector theory, and against an independent band structure calculation. It was then used to test 1020 designs across six material pairs, ten cell thicknesses from 5 to 100 millimetres, and seventeen thickness ratios. Each design used ten unit cells. Deep transmission loss was capped at a 60 decibel to maintain practical relevance and avoid unrealistic predictions.
+              </p>
+              <p className="text-label-secondary text-sm leading-relaxed text-pretty">
+                <strong className="text-label">Results.</strong> Bandgap width increased with impedance contrast with the fractional width rose from 1.22 for concrete &ndash; rubber configuration to 1.94 for concrete &ndash; air gap configuration. Bandgap center frequency fell as the cell grew thicker. A concrete and air gap stack of 114 kilograms per square metre opened a stop band from 173 to 3000 hertz. It exceeded an equal-mass solid wall by 4.3 decibels across the urban band.
+              </p>
+              <p className="text-label-secondary text-sm leading-relaxed text-pretty">
+                <strong className="text-label">Conclusions.</strong> Contrast and geometry give separate control of bandgap width and position. Light low-frequency blocking favours high-contrast designs. The lowest frequencies will need locally resonant elements in later work.
+              </p>
+            </div>
           </section>
         )}
       </div>

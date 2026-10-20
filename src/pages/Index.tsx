@@ -97,7 +97,7 @@ export default function Index() {
   return (
     <div className="text-label">
       {/* ─────────────────────────  HERO  ───────────────────────── */}
-      <section className="relative isolate flex min-h-[calc(100svh-4.25rem)] items-center px-5 py-14 sm:px-8">
+      <section className="relative isolate flex min-h-[calc(100svh-5rem)] items-center px-5 py-14 sm:px-8">
 
         <div className="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Copy */}
