@@ -57,7 +57,7 @@ export default function Navbar() {
         )}
       >
         <div className="px-5 sm:px-6">
-          <div className="flex h-[4.25rem] items-center justify-between gap-6">
+          <div className="flex h-[4.75rem] items-center justify-between gap-5">
           {/* Identity */}
           <Link
             to="/"
@@ -65,18 +65,18 @@ export default function Navbar() {
             aria-label="Aarav Aggarwal — Home"
           >
             <span
-              className="app-icon grid h-[32px] w-[32px] shrink-0 place-items-center bg-gradient-to-b from-[#2E2E30] to-[#000000] text-[0.72rem] font-semibold tracking-[-0.03em] text-white shadow-[inset_0_1px_0_0_rgb(255_255_255/0.28)]"
+              className="app-icon grid h-[36px] w-[36px] shrink-0 place-items-center bg-gradient-to-b from-[#2E2E30] to-[#000000] text-[0.8rem] font-semibold tracking-[-0.03em] text-white shadow-[inset_0_1px_0_0_rgb(255_255_255/0.28)]"
               aria-hidden
             >
               AA
             </span>
-            <span className="whitespace-nowrap text-[1.18rem] font-semibold tracking-[-0.025em] text-label transition-opacity duration-200 group-hover:opacity-70">
+            <span className="whitespace-nowrap text-[1.32rem] font-semibold tracking-[-0.03em] text-label transition-opacity duration-200 group-hover:opacity-70">
               Aarav Aggarwal
             </span>
           </Link>
 
           {/* Full set — wide windows only */}
-          <div className="hidden items-center gap-6 xl:flex">
+          <div className="hidden items-center gap-5 min-[1400px]:flex">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (
@@ -103,7 +103,7 @@ export default function Navbar() {
           </div>
 
           {/* Narrower windows: the tail folds into More */}
-          <div className="hidden items-center gap-6 lg:flex xl:hidden">
+          <div className="hidden items-center gap-5 lg:flex min-[1400px]:hidden">
             {PRIMARY.map((item) => {
               const isActive = location.pathname === item.path;
               return (

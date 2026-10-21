@@ -42,7 +42,6 @@ export default function Index() {
       path: "/urban-heat-stress",
       badge: "Climate Impact",
       icon: Flame,
-      wide: false,
     },
     {
       title: "Engineering & Technology",
@@ -51,7 +50,6 @@ export default function Index() {
       path: "/engineering-technology",
       badge: "Hardware & AI",
       icon: CircuitBoard,
-      wide: false,
     },
     {
       title: "Research",
@@ -60,7 +58,6 @@ export default function Index() {
       path: "/research",
       badge: "Peer-Reviewed & Patents",
       icon: FlaskConical,
-      wide: false,
     },
     {
       title: "Leadership & Mentoring",
@@ -69,7 +66,6 @@ export default function Index() {
       path: "/leadership-mentoring",
       badge: "Community & TA",
       icon: Users,
-      wide: false,
     },
     {
       title: "Cricket",
@@ -78,7 +74,6 @@ export default function Index() {
       path: "/cricket",
       badge: "National Athlete",
       icon: Trophy,
-      wide: false,
     },
     {
       title: "Awards & Recognition",
@@ -87,17 +82,13 @@ export default function Index() {
       path: "/awards-recognition",
       badge: "Honors & Medals",
       icon: Medal,
-      wide: false,
     },
   ];
-
-  const [feature, ...rest] = quickNavCards;
-  const FeatureIcon = feature.icon;
 
   return (
     <div className="text-label">
       {/* ─────────────────────────  HERO  ───────────────────────── */}
-      <section className="relative isolate flex min-h-[calc(100svh-5rem)] items-center px-5 py-14 sm:px-8">
+      <section className="relative isolate flex min-h-[calc(100svh-5.5rem)] items-center px-5 py-14 sm:px-8">
 
         <div className="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Copy */}
@@ -213,75 +204,28 @@ export default function Index() {
           </Reveal>
 
           <div className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {/* Feature tile — the one solid black surface anchors the grid */}
-            <Reveal>
-              <Link
-                to={feature.path}
-                className="group flex h-full flex-col justify-between rounded-tile-lg bg-inverted p-7 text-inverted-label shadow-[0_3px_14px_-6px_hsl(0_0%_0%/0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-10px_hsl(0_0%_0%/0.3)]"
-              >
-              <div>
-                <div className="flex items-start justify-between gap-6">
-                  <FeatureIcon className="h-6 w-6 opacity-90" strokeWidth={1.5} aria-hidden />
-                  <span className="text-[0.82rem] opacity-70">{feature.badge}</span>
-                </div>
-
-                <h3 className="mt-7 text-[clamp(1.8rem,3.2vw,2.4rem)] font-semibold leading-[1.08] tracking-[-0.03em] text-inverted-label">
-                  {feature.title}
-                </h3>
-                <p className="mt-1.5 text-[0.94rem] opacity-85">{feature.subtitle}</p>
-                <p className="mt-4 text-[0.94rem] leading-[1.6] opacity-70 text-pretty">
-                  {feature.desc}
-                </p>
-              </div>
-
-                <span className="mt-8 inline-flex items-center text-[0.94rem] text-inverted-label">
-                  Explore Page
-                  <ChevronRight
-                    className="ml-0.5 h-[1.05em] w-[1.05em] transition-transform duration-200 group-hover:translate-x-0.5"
-                    aria-hidden
-                  />
-                </span>
-              </Link>
-            </Reveal>
-
-            {/* Frosted tiles */}
-            {rest.map((card, i) => {
+            {quickNavCards.map((card, i) => {
               const Icon = card.icon;
               return (
-                <Reveal
-                  key={card.title}
-                  delay={60 * (i + 1)}
-                >
+                <Reveal key={card.title} delay={60 * i}>
                   <Link
                     to={card.path}
-                    className={cn(
-                      "glass-card glass-card-link group flex h-full flex-col justify-between rounded-tile-lg p-7 transition-all duration-300 hover:-translate-y-1",
-                      card.wide && "lg:p-9",
-                    )}
+                    className="glass-card glass-card-link group flex h-full flex-col justify-between rounded-tile-lg p-7 transition-all duration-300 hover:-translate-y-1"
                   >
-                  <div>
-                    <div className="flex items-start justify-between gap-5">
-                      <Icon className="h-6 w-6 text-label" strokeWidth={1.5} aria-hidden />
-                      <span className="text-[0.82rem] text-label-secondary">{card.badge}</span>
-                    </div>
+                    <div>
+                      <div className="flex items-start justify-between gap-5">
+                        <Icon className="h-6 w-6 text-label" strokeWidth={1.5} aria-hidden />
+                        <span className="text-[0.82rem] text-label-secondary">{card.badge}</span>
+                      </div>
 
-                    <h3
-                      className={cn(
-                        "mt-7 font-semibold leading-[1.15] tracking-[-0.025em] text-label",
-                        "text-[1.29rem]",
-                      )}
-                    >
-                      {card.title}
-                    </h3>
-                    <p className="mt-1.5 text-[0.94rem] text-label-secondary">{card.subtitle}</p>
-                    <p
-                      className={cn(
-                        "mt-4 text-[0.94rem] leading-[1.6] text-label-secondary text-pretty",
-                      )}
-                    >
-                      {card.desc}
-                    </p>
-                  </div>
+                      <h3 className="mt-7 text-[1.29rem] font-semibold leading-[1.15] tracking-[-0.025em] text-label">
+                        {card.title}
+                      </h3>
+                      <p className="mt-1.5 text-[0.94rem] text-label-secondary">{card.subtitle}</p>
+                      <p className="mt-4 text-[0.94rem] leading-[1.6] text-label-secondary text-pretty">
+                        {card.desc}
+                      </p>
+                    </div>
 
                     <span className="mt-7 inline-flex items-center text-[0.94rem] font-medium text-label">
                       Explore Page
