@@ -122,8 +122,8 @@ export default function Index() {
                them (buttons.md › Style) */}
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
-                href="/AaravResumeJan-17-2026.pdf"
-                download="AaravResumeJan-17-2026.pdf"
+                href="/FINALRESUMEAARAV.pdf"
+                download="FINALRESUMEAARAV.pdf"
                 className="pill inline-flex min-h-[44px] items-center bg-accent px-6 text-[1rem] text-accent-foreground transition-colors duration-200 hover:bg-accent-hover"
               >
                 Download Resume

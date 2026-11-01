@@ -29,8 +29,8 @@ export default function Resume() {
           {/* Direct Download & Social Triggers */}
           <div className="flex flex-wrap items-center gap-3">
             <a
-              href="/AaravResumeJan-17-2026.pdf"
-              download="AaravResumeJan-17-2026.pdf"
+              href="/FINALRESUMEAARAV.pdf"
+              download="FINALRESUMEAARAV.pdf"
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-semibold px-5 py-2.5 rounded-lg text-xs transition-all cursor-pointer min-h-[44px]"
             >
               <Download className="w-4 h-4" /> Download Resume PDF
@@ -273,11 +273,11 @@ export default function Resume() {
           {/* Download Action Footer */}
           <div className="pt-4 border-t border-white/60 text-center">
             <a
-              href="/AaravResumeJan-17-2026.pdf"
-              download="AaravResumeJan-17-2026.pdf"
+              href="/FINALRESUMEAARAV.pdf"
+              download="FINALRESUMEAARAV.pdf"
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-xl text-xs transition-all  min-h-[44px]"
             >
-              <Download className="w-4 h-4" /> Download Official Resume PDF (AaravResumeJan-17-2026.pdf)
+              <Download className="w-4 h-4" /> Download Official Resume PDF (FINALRESUMEAARAV.pdf)
             </a>
           </div>
         </div>

@@ -94,8 +94,8 @@ export default function Navbar() {
               );
             })}
             <a
-              href="/AaravResumeJan-17-2026.pdf"
-              download="AaravResumeJan-17-2026.pdf"
+              href="/FINALRESUMEAARAV.pdf"
+              download="FINALRESUMEAARAV.pdf"
               className={cn(itemClass, "font-semibold text-label")}
             >
               Resume
@@ -151,8 +151,8 @@ export default function Navbar() {
             </DropdownMenu>
 
             <a
-              href="/AaravResumeJan-17-2026.pdf"
-              download="AaravResumeJan-17-2026.pdf"
+              href="/FINALRESUMEAARAV.pdf"
+              download="FINALRESUMEAARAV.pdf"
               className={cn(itemClass, "font-semibold text-label")}
             >
               Resume
@@ -191,8 +191,8 @@ export default function Navbar() {
               );
             })}
             <a
-              href="/AaravResumeJan-17-2026.pdf"
-              download="AaravResumeJan-17-2026.pdf"
+              href="/FINALRESUMEAARAV.pdf"
+              download="FINALRESUMEAARAV.pdf"
               className="flex min-h-[44px] items-center text-[1.05rem] font-semibold text-label transition-opacity duration-200 hover:opacity-70"
             >
               Resume

@@ -55,8 +55,8 @@ export default function Footer() {
               ))}
               <li>
                 <a
-                  href="/AaravResumeJan-17-2026.pdf"
-                  download="AaravResumeJan-17-2026.pdf"
+                  href="/FINALRESUMEAARAV.pdf"
+                  download="FINALRESUMEAARAV.pdf"
                   className={linkClass}
                 >
                   Download Resume (PDF)
@@ -85,8 +85,8 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/AaravResumeJan-17-2026.pdf"
-                  download="AaravResumeJan-17-2026.pdf"
+                  href="/FINALRESUMEAARAV.pdf"
+                  download="FINALRESUMEAARAV.pdf"
                   className={linkClass}
                 >
                   Download Resume PDF
